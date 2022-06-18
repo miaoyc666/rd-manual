@@ -5,4 +5,4 @@ Test
 常用的接口测试工具
 - [wrk](./wrk.md)
 - [jmeter](./jmeter.md)
-- [locust]
+- [locust](./locust.md)
