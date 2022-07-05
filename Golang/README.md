@@ -1,15 +1,15 @@
 # Golang
 
-### 初始化空变量
+#### 初始化空变量
 map: `var a map[string]string`  
 slice: `var b = make([]string, 0)`
 
-### 初始化赋值变量
+#### 初始化赋值变量
 map: `tmpMap := map[int]string{0 : "a", 1 : "b"}`  
 slice: `slis := []int{1,2,3,4,5,6,7,8}`  
 数组：`nums := [...]int{1,2,3,4,5,6,7,8}`
  
-### 遍历
+#### 遍历
 数组
 ```go
 for k, v:= range nums{
@@ -43,31 +43,33 @@ for i < l {
 ```
 
 
-### 格式转换
-#### float转string
+#### 格式转换
+##### 数据类型转换
 ```go
+// float转string
 strScore := strconv.FormatFloat(float64(score), 'f', 0, 32)
 str_ := fmt.Sprintf("%f", floatVar)
-```
-#### int转string
-```go
+// int转string
 str := strconv.Itoa(score)
 int_ := fmt.Sprintf("%d", intVar)
-```
-#### []byte转string
-```go
+// []byte转string
 a := string(b)
-```
-#### string转[]byte
-```go
+// string转[]byte
 a := []byte(b)
 ```
 
-### 时间转换
+##### 时间转换
 
-#### unix时间戳转标准时间字符串
+#### 
 ```go
-timeString := time.Unix(timestamp, 0).Format("2006-01-02 15:04:05")
+// 获取当前时间
+t := time.Now()
+// 获取时间戳
+t.Unix()
+// unix时间戳转标准时间字符串
+timeString := t.Unix().Format("2006-01-02 15:04:05")
+// 标准时间字符串转unix时间戳
+loc, _ := time.LoadLocation("Asia/Shanghai")
+tt, _ := time.ParseInLocation("2006-01-02 15:04:05", timeString, loc)
+timeStamp := tt.Unix()
 ```
-
-#### 标准时间字符串转ISODate
