@@ -83,3 +83,8 @@ export PATH=$PATH:$GOPATH/bin
 # 生成所有测试用例
 gotests -all {$filename}
 ```
+
+#### go test
+```bash
+go test -v {$testfile} {$sourcefile}
+```
