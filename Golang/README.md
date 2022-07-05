@@ -73,3 +73,13 @@ loc, _ := time.LoadLocation("Asia/Shanghai")
 tt, _ := time.ParseInLocation("2006-01-02 15:04:05", timeString, loc)
 timeStamp := tt.Unix()
 ```
+
+#### gotests
+```bash
+# 安装gotests
+go get -u github.com/cweill/gotests/...
+# env
+export PATH=$PATH:$GOPATH/bin
+# 生成所有测试用例
+gotests -all {$filename}
+```
