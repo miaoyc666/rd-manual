@@ -9,8 +9,8 @@
 `git tag -d <tag_name>`
 
 ##### 推送tag
-`git push --tags`
-`git push --tag`
+- `git push --tags`
+- `git push --tag`
 
 ##### 控制台命令行设置为彩色输出
 `git config color.ui true`
