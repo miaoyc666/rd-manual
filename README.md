@@ -2,6 +2,7 @@
 个人整理的研发手册，命令与语法速查，R&amp;D manual
 
 #### 索引
+- [Clickhouse](./Clickhouse/README.md)
 - [Debug](./Debug/README.md)
 - [Docker](./Docker/README.md)
 - [Git](./Git/README.md)
