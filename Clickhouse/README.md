@@ -27,12 +27,17 @@ CREATE TABLE ti.miaoyc_alter_test_all (`time` DateTime, `ioc` String) ENGINE = D
 
 ##### 分布式表加字段
 ```bash
-分别在基础表和分布式表上新增字段即可
+# 分别在基础表和分布式表上新增字段即可
+```
+
+##### 分布式表更新数据
+```bash
+# 对于分布式表，要分别在每个节点删除基础表的数据
 ```
 
 ##### 物化视图创建立刻生成数据
 ```bash
-要添加 POPULATE 关键字
+# 要添加 POPULATE 关键字
 ```
 
 
