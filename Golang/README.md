@@ -49,11 +49,17 @@ for i < l {
 // float转string
 strScore := strconv.FormatFloat(float64(score), 'f', 0, 32)
 str_ := fmt.Sprintf("%f", floatVar)
+
 // int转string
 str := strconv.Itoa(score)
 int_ := fmt.Sprintf("%d", intVar)
+
+// string转long
+n, _ := strconv.ParseInt(tid, 10, 64)
+
 // []byte转string
 a := string(b)
+
 // string转[]byte
 a := []byte(b)
 ```
@@ -64,10 +70,13 @@ a := []byte(b)
 ```go
 // 获取当前时间
 t := time.Now()
+
 // 获取时间戳
 t.Unix()
+
 // unix时间戳转标准时间字符串
 timeString := t.Unix().Format("2006-01-02 15:04:05")
+
 // 标准时间字符串转unix时间戳
 loc, _ := time.LoadLocation("Asia/Shanghai")
 tt, _ := time.ParseInLocation("2006-01-02 15:04:05", timeString, loc)
@@ -78,8 +87,10 @@ timeStamp := tt.Unix()
 ```bash
 # 安装gotests
 go get -u github.com/cweill/gotests/...
+
 # env
 export PATH=$PATH:$GOPATH/bin
+
 # 生成所有测试用例
 gotests -all {$filename}
 ```
