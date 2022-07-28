@@ -1,7 +1,7 @@
 # Nginx
 
 ### Api反向代理转发server
-```config
+```bash
     server {
         listen      80;
         server_name a.xx.com;
@@ -32,6 +32,25 @@
     }
 ```
 
+### 端口转发加base auth
+```bash
+# /etc/nginx/pass_file内容示例：
+# 用户名:密码
+# docker:wslClcoyKal4c
+server {
+    listen      8090;
+    location / {
+        auth_basic   "登录认证";
+        auth_basic_user_file /etc/nginx/pass_file;
+        autoindex on;
+        autoindex_exact_size on;
+        autoindex_localtime on;
+        proxy_set_header Host 10.249.171.45;
+        proxy_pass http://localhost:8090/;
+    }
+}
+```
+
 ### 转发适配规则
 #### 带前缀转发
 ```config
@@ -46,4 +65,3 @@ location /api/v1/ {
             proxy_pass http://open_api_v1/;
 }
 ```
-
