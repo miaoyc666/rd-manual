@@ -1,3 +1,4 @@
+
 # Python
 
 ##### 创建虚拟环境
@@ -15,9 +16,23 @@ pip freeze > requirements.txt
 pip show ${package_name}
 ```
 
-##### 只下载包
+##### 查找包依赖
 ```bash
 pip download -d ${path} -r requirement.txt
+```
+
+##### 文件服务器便捷搭建
+```bash
+python -m pyftpdlib  -d /tulog
+```
+
+##### pip安装
+```bash
+# py2
+wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+# py3
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python/python3 get-pip.py 
 ```
 
 ##### 计算md5和base64
