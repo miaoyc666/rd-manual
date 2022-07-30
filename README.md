@@ -14,6 +14,7 @@
 - [Nginx](./Nginx/README.md)
 - [Postgres](./Postgres/README.md)
 - [Python](./Python/README.md)
+- [Shell](./Shell/README.md)
 - [Test](./Test/README.md)
 
 #### 提升开发效率的技巧和工具
