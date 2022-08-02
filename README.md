@@ -19,3 +19,4 @@
 
 #### 提升开发效率的技巧和工具
 - [SSH免密](./Efficient/ssh.md)
+- [Centos磁盘操作](./Efficient/centos-disk.md)
