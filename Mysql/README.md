@@ -1,4 +1,6 @@
-# Mysql
+Mysql
+=
+
 ### ✅常用命令✅
 #### 0.连接
 ```bash
@@ -40,11 +42,20 @@ drop user zhangsan@'%';
 ##### 2.2.1 删库
 ##### 2.2.2 删表
 
-
 #### 2.3 改
 ##### 2.3.1 修改字段类型
 ```sql
 alter table <table_name> modify <field_name> <field_type>;
+```
+
+##### 2.3.2 修改主键id为自增
+```sql
+alter table <table_name> modify id int auto_increment;
+```
+
+##### 2.3.3 修改自增字段起点
+```sql
+alter table <table_name> AUTO_INCREMENT=10000;
 ```
 #### 2.4 查
 
