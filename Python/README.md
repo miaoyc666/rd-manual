@@ -31,12 +31,9 @@ python -m pyftpdlib  -d /tulog
 # py2
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 sudo python get-pip.py
-# version >= py3.7 
+# py3 
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py 
-# version <= py3.6
-wget https://bootstrap.pypa.io/pip/3.6/get-pip.py
-sudo python get-pip.py
 ```
 
 ##### 计算md5和base64
