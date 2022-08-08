@@ -108,7 +108,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 
-#### pass
+#### 常规自启设置
 ```bash
 systemctl enable kubelet
 systemctl restart kubelet
@@ -130,7 +130,6 @@ kubectl apply -f kube-flannel.yml
 ```bash
 
 ```
-
 
 ## 升级K8s
 #### yum安装软件包提示公钥尚未安装问题
