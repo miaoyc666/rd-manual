@@ -12,8 +12,15 @@ yum list --showduplicates | grep ${soft-name}
 yum install -y ${soft-name}-${version}
 ```
 
+#### 提示公钥尚未安装问题解决
+```bash
+yum install --nogpgcheck ${soft-name}
+```
+
 ### Apt
 
 ## Mac
 ### Brew
+
+
 

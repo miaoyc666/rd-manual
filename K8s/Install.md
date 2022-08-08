@@ -3,7 +3,7 @@
 ### 1.安装docker
 一键安装docker脚本如下：
 ```bash
-# 移出旧版包
+# 移除旧版包
 sudo yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -55,8 +55,7 @@ ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 
 ### 安装k8s
 
-#### 官网链接
-[install k8s](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
+#### [官网链接](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
 ```bash
 cat <<EOF | sudo tee /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -78,47 +77,58 @@ sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 ```
 
+#### 配置国内阿里源进行更新
+```bash
+cat <<EOF >/etc/yum.repos.d/kubernetes.repo
+
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+```
+
+#### [安装指定版本程序](https://github.com/miaoyc666/rd-manual/blob/main/Install/README.md)
+
+
+#### 设置主节点, Master init
+```bash
+kubeadm init --kubernetes-version=v1.23.4 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.249.192.42
+# 在上面的命令中，--kubenets-version要对应真实版本的，--pod-network-cidr需要自己想一个网段，--apiserver-advertise-address这个master的ip，即当前master的IP
+
+# kubeadm init会返回从节点用鱼join的命令，拷贝粘贴到想要加入到主节点的节点上执行即可
+```
+
 #### 设置环境变量
-```bash
-export KUBECONFIG=/etc/kubernetes/kubelet.conf
-```
-
-#### master初始化
-```bash
-kubeadm init --kubernetes-version=v1.23.4 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.249.192.42
-```
-
-#### 修改kube-proxy支持
-```bash
-echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
-```
-
-#### 设置主节点
-```bash
-kubeadm init --kubernetes-version=v1.23.4 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.249.192.42
-#上面的命令中，--kubenets-version要对应真实版本的，--pod-network-cidr需要自己想一个网段，--apiserver-advertise-address这个master的ip，即当前master的IP
-```
-
-####
 ```bash
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-export KUBECONFIG=/etc/kubernetes/admin.conf
+export KUBECONFIG=/etc/kubernetes/kubelet.conf
 ```
 
-#### pass
+#### 配置从节点，Node join
+```bash
+# 使用kubeadm init的返回结果执行即可
+You can now join any number of machines by running the following on each node
+as root:
+kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discovery-token-ca-cert-hash sha256:<hash>
+```
+
+#### 主节点的Token管理
+```bash
+kubeadm token create    # 创建新token
+kubeadm token list      # 获取token列表
+```
+
+#### 常规自启设置
 ```bash
 systemctl enable kubelet
 systemctl restart kubelet
-```
-
-#### 配置从节点
-拷贝主节点的/etc/kubernetes/admin.conf到从节点
-```bash
-mkdir -p $HOME/.kube
-cp /home/miaoyongchao/admin.conf $HOME/.kube/config
 ```
 
 #### 安装网络插件
@@ -126,15 +136,20 @@ cp /home/miaoyongchao/admin.conf $HOME/.kube/config
 kubectl apply -f kube-flannel.yml
 ```
 
+#### 修改kube-proxy支持
+```bash
+echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
+```
+
 #### 解决no networks found in /etc/cni/net.d
 ```bash
-
 ```
 
 
 ## 升级K8s
 #### yum安装软件包提示公钥尚未安装问题
-```
-yum install时添加参数 --nogpgcheck
+```bash
+# install时添加参数
+yum install --nogpgcheck
 ```
 
