@@ -18,9 +18,10 @@
 - [Test](./Test/README.md)
 
 #### 提升开发效率的技巧和工具
+- [安装软件](./Install/README.md)
 - [SSH免密](./Efficient/ssh.md)
-- [Centos磁盘操作](./Efficient/centos-disk.md)
 
 #### 复杂工具安装
 - [K8s](./K8s/Install.md)
+- [Centos磁盘操作](./Efficient/centos-disk.md)
 
