@@ -9,7 +9,7 @@ yum list --showduplicates | grep ${soft-name}
 ```
 #### 安装指定版本软件
 ```bash
-yum install ${soft-name}-${version}
+yum install -y ${soft-name}-${version}
 ```
 
 ### Apt
