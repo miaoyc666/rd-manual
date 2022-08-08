@@ -145,7 +145,6 @@ echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
 ```bash
 ```
 
-
 ## 升级K8s
 #### yum安装软件包提示公钥尚未安装问题
 ```bash
