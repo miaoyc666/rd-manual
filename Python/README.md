@@ -30,9 +30,10 @@ python -m pyftpdlib  -d /tulog
 ```bash
 # py2
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-# py3
+sudo python get-pip.py
+# py3 
 wget https://bootstrap.pypa.io/get-pip.py
-sudo python/python3 get-pip.py 
+sudo python3 get-pip.py 
 ```
 
 ##### 计算md5和base64

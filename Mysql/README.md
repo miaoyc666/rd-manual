@@ -1,4 +1,6 @@
-# Mysql
+Mysql
+=
+
 ### ✅常用命令✅
 #### 0.连接
 ```bash
@@ -37,7 +39,24 @@ drop user zhangsan@'%';
 ### 2.curd
 #### 2.1 增
 #### 2.2 删
+##### 2.2.1 删库
+##### 2.2.2 删表
+
 #### 2.3 改
+##### 2.3.1 修改字段类型
+```sql
+alter table <table_name> modify <field_name> <field_type>;
+```
+
+##### 2.3.2 修改主键id为自增
+```sql
+alter table <table_name> modify id int auto_increment;
+```
+
+##### 2.3.3 修改自增字段起点
+```sql
+alter table <table_name> AUTO_INCREMENT=10000;
+```
 #### 2.4 查
 
 
@@ -47,30 +66,36 @@ drop user zhangsan@'%';
 ```sql
 alter table <table_name> rename to <new_table_name>
 ```
-#### text字段类型改json
-```sql
-alter table <table_name> modify <field_name> json;
-```
+
 #### 2.备份与恢复表
 ##### 2.1 表备份成sql文件
-```sql
-mysqldump -h {host} -u {username} -P {port} -p {password} -t {dbname} > dump.sql
+
+```bash
+mysqldump -h {host} -u {username} -P {port} -p {password} -t {dbname} --tables {tb1} {tb2} ... > dump.sql # 不指定--tables参数则导出所有表
 ```
 ##### 2.2 sql文件恢复成表
-```sql
+```bash
 mysql -h {host} -u {username} -P {port} -p {password} -t {dbname}  < dump.sql
 ```
 ##### 2.3 高效的本地库内复制
 ```sql
-1. 复制表结构及数据到新表：create table <new table> select * from <old table>
-2. 只复制表结构到新表（此时会默认使用innodb）：create table <new table> select * from <old table> where 1 = 2 
+1. 复制表结构及数据到新表：
+create table <new table> as select * from <old table>
+或：
+create table <new table> like <old table>;
+insert into <new table> select * from <old table>;
+2. 只复制表结构到新表（此时会默认使用innodb）
+create table <new table> as select * from <old table> where 1 = 2 
 ```
-#### 3.
+#### 3.导入/导出csv
 ##### 3.1
+```bash
+mysqldump -h {host} -u {username} -P {port} -p {password} -t {dbname} --tables {tb1} {tb2} ... -T {$filepath}  mydb customers  --fields-terminated-by=',' --fields-enclosed-by='\"'
+mysql -h 127.0.0.1 -u root -p XXXX -P 3306 -e "select * from table"  > /tmp/test/txt
+```
 
 
 ### 参考文档
 * [官方文档](https://mongoing.com/docs/index.html)
 * [菜鸟教程](https://www.runoob.com/mongodb/mongodb-tutorial.html)
-
 
