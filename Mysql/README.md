@@ -1,6 +1,4 @@
-Mysql
-=
-
+# Mysql
 ### ✅常用命令✅
 #### 0.连接
 ```bash
@@ -94,8 +92,13 @@ mysqldump -h {host} -u {username} -P {port} -p {password} -t {dbname} --tables {
 mysql -h 127.0.0.1 -u root -p XXXX -P 3306 -e "select * from table"  > /tmp/test/txt
 ```
 
+### 🔶不常见的坑🔶
+##### 1.唯一索引问题
+联合唯一索引的字段中，当出现null值时，唯一性约束不会生效。
+
 
 ### 参考文档
 * [官方文档](https://mongoing.com/docs/index.html)
 * [菜鸟教程](https://www.runoob.com/mongodb/mongodb-tutorial.html)
+
 
