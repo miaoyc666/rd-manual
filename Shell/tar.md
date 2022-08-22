@@ -11,24 +11,20 @@ openssl aes-128-cbc -d -in blog.tar.gz.aes -out blog.tar.gz -k 123123
 ```
 
 ### gzip解压缩
-#### 压缩文件夹
+#### 文件
 ```bash
-tar -zcf blog.tar.gz blog
+gzip -c {$filename}     # 压缩    
+gzip -d {$filename}     # 解压缩
 ```
-
-#### 解压文件夹
+#### 文件夹
 ```bash
-# 解压缩指定的目录要保证已存在，例中miaoyc目录要存在
-tar -zxvf blog.tar.gz -C miaoyc
+tar -zcf blog.tar.gz blog       # 压缩
+tar -zxvf blog.tar.gz -C miaoyc # 解压缩指定的目录要保证已存在，例中miaoyc目录要存在
 ```
 
 ### zip解压缩
-#### 压缩目录
+#### 目录
 ```bash
-zip -r target.zip target
-```
-
-#### 解压缩
-```bash
-unzip target.zip
+zip -r target.zip target    # 压缩 
+unzip target.zip            # 解压缩
 ```
