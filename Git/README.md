@@ -9,25 +9,39 @@
 `git tag -d <tag_name>`
 
 ##### 推送tag
-- `git push --tags`
-- `git push --tag`
+`git push --tags`
+`git push --tag`
 
 ##### 控制台命令行设置为彩色输出
 `git config color.ui true`
 
+### 🔶Git lfs🔶
+##### Install
+```bash
+# git lfs要求git version >= 1.8.2
+yum install git-lfs -y
+git lfs instal
+```
+
+##### 使用步骤
+1. `git lfs install`开启lfs功能
+2. 大文件cp到git库
+3. `git lfs track`进行大文件追踪, 例如：`git lfs track abc/aaa.tgz`
+此时`cat .gitattributes`，会看到：`abc/aaa.tgz filter=lfs diff=lfs merge=lfs -text`
+4. `git add .gitattributes`
+5. `commit`
+6. `git lfs ls-files`可以显示当前跟踪的文件列表
+
+
 ### 🔶不常用命令🔶
 
 ##### 设置本地分支对应的远程分支的方法
-`git push -u origin {$branch name}`
+`git push -u origin {branch name}`
 
 ##### 回滚到指定版本
 ```bash
-# 把工作目录的文件恢复到某一次提交的状态，覆盖现在的文件，HEAD回退
-git reset --hard {$commit_id}
+git reset --hard {commit_id}
 git push --force    # 慎重使用
-
-# 新增commit的方式恢复到之前的版本，HEAD向前移动
-git revert  {$commit_id}
 ```
 
 ##### 修改提交记录:
