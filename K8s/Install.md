@@ -133,7 +133,14 @@ systemctl restart kubelet
 ```
 
 #### 安装网络插件
+##### kube-flannel.yml
+[kube-flannel.yml]()
+
+##### install
 ```bash
+# kube-flannel.yml依赖镜像 
+# quay.io/coreos/flannel:v0.14.0
+# k8s.gcr.io/pause:3.6
 kubectl apply -f kube-flannel.yml
 ```
 
