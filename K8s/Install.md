@@ -1,5 +1,6 @@
 # 安装k8s
-## 先安装docker，再安装k8s
+
+### 先安装docker，再安装k8s（v1.24版本以前需要安装docker）
 ### 1.安装docker
 一键安装docker脚本如下：
 ```bash
@@ -121,7 +122,7 @@ kubeadm join <control-plane-host>:<control-plane-port> --token <token> --discove
 
 #### 主节点的Token管理
 ```bash
-kubeadm token create    # 创建新token
+kubeadm token create --print-join-command   # 创建新token
 kubeadm token list      # 获取token列表
 ```
 
@@ -144,6 +145,9 @@ echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
 #### 解决no networks found in /etc/cni/net.d
 ```bash
 ```
+
+#### 节点状态NotReady问题
+
 
 ## 升级K8s
 #### yum安装软件包提示公钥尚未安装问题
