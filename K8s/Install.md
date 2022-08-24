@@ -134,7 +134,7 @@ systemctl restart kubelet
 
 #### 安装网络插件
 ##### kube-flannel.yml
-[kube-flannel.yml]()
+[kube-flannel.yml](https://github.com/miaoyc666/rd-manual/blob/main/K8s/kube-flannel.yml)
 
 ##### install
 ```bash
