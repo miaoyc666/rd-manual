@@ -78,6 +78,8 @@ sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 ```
 
+安装老版本程序，[命令参考](https://github.com/miaoyc666/rd-manual/blob/main/Install/README.md)
+
 #### 配置国内阿里源进行更新
 ```bash
 cat <<EOF >/etc/yum.repos.d/kubernetes.repo
@@ -92,9 +94,6 @@ gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
        http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 ```
-
-#### [安装指定版本程序](https://github.com/miaoyc666/rd-manual/blob/main/Install/README.md)
-
 
 #### 设置主节点, Master init
 ```bash
