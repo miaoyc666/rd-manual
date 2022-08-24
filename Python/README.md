@@ -23,7 +23,7 @@ pip download -d ${path} -r requirement.txt
 
 ##### 文件服务器便捷搭建
 ```bash
-python -m pyftpdlib  -d /tulog
+python -m pyftpdlib -d .
 ```
 
 ##### pip安装
