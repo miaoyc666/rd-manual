@@ -1,7 +1,13 @@
 # ssh免密账户目录设置
-sshd为了安全对属主的目录和文件权限有所要求，如果权限不对，则ssh的免密码登陆不生效。
+
+#### 更简单的方案
+```bash
+ssh-copy-id {$username}@{$hostname}
+```
 
 #### 目录权限
+sshd为了安全对属主的目录和文件权限有所要求，如果权限不对，则ssh的免密码登陆不生效。
+
 - 用户目录权限为755或者700，就是不能是77x
 - .ssh目录权限一般为755或者700
 - rsa_id.pub及authorized_keys权限一般为644
@@ -12,9 +18,6 @@ sshd为了安全对属主的目录和文件权限有所要求，如果权限不�
 mkdir .ssh
 chmod 700 .ssh
 # 导入authorized_keys, 可在服务器使用rz或scp
-
-#以上三步可简化为
-ssh-copy-id {$username}@{$hostname}
 
 vim ~/.ssh/config
 ```
