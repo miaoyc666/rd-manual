@@ -21,6 +21,7 @@
 #### 提升开发效率的技巧和工具
 - [安装软件](./Install/README.md)
 - [SSH免密](./Efficient/ssh.md)
+- [ohmyzsh](./Efficient/ohmyzsh.md)
 
 #### 复杂工具安装
 - [K8s](./K8s/Install.md)
