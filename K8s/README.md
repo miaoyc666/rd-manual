@@ -1,10 +1,35 @@
-# K8s
+k8s
+=
+
+## 💚原子命令
+#### 通用命令
+```bash
+# aciton行动，entity实体
+kubectl ${action} ${entity}
+```
+#### action列表
+- apply
+- get 
+- config
+- create
+- delete
+- describe
+- labels
+- replace
+
+#### entity列表
+- view
+- namespaces
+- nodes
+- pod
+- secrets
+- configmap
 
 ## 💔常见问题
 ##### 1.kubectl命令无权限问题
 ```bash
 # 修改配置文件权限，此处为k3s配置，其它同理
-sudo chmod 666 /etc/rancher/k3s/k3s.yaml   
+sudo chmod 666 /etc/rancher/k3s/k3s.yaml
 ```
 ##### 2.证书过期问题
 ```bash
@@ -12,19 +37,17 @@ sudo chmod 666 /etc/rancher/k3s/k3s.yaml
 Unable to connect to the server: x509: certificate has expired or is not yet valid
 ```
 解决方法有两个，一是升级集群，二是手动更新证书。
-###### 升级集群
+###### 2.1 升级集群
 官方文档
-``
 
-###### 更新证书
+###### 2.2 更新证书
 官方操作文档
 `https://kubernetes.io/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/`
 更新证书命令
 `kubeadm certs renew all`
 
 
-
-## 💚常用命令
+## 💚基础命令
 ### 0.config
 #### 0.1 获取kubeconfig
 `kubectl config view`
@@ -35,7 +58,7 @@ Unable to connect to the server: x509: certificate has expired or is not yet val
 #### 1.1 获取所有工作空间
 `kubectl get namespace  # namespace可简写为ns`
 #### 1.2 创建命名空间
-`kubectl create namespace <insert-namespace-name-here`
+`kubectl create namespace <insert-namespace-name-here>`
 #### 1.3 删除命名空间
 `kubectl delete namespaces <insert-some-namespace-name>`
 #### 1.4 查看当前工作空间
@@ -91,6 +114,10 @@ kubectl create secret generic harborsecret --from-file=.dockerconfigjson=/root/.
 `kubectl get cm -A`
 #### 5.2 获取指定configmap的详情
 `kubectl get cm <configmap> -o yaml`
+#### 5.3 创建configmap
+`kubectl create cm {configmap name} --from-file=/path/file -n {namespace}`
+#### 5.4 删除configmap
+`kubectl delete cm {configmap name} -n {namespace}`
 
 ### 6.describe
 输出指定的一个/多个资源的详细信息
