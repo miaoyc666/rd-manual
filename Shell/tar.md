@@ -20,8 +20,9 @@ gzip -d {$filename}                     # 解压缩
 
 #### 文件夹
 ```bash
-tar -zcf blog.tar.gz blog       # 压缩
-tar -zxvf blog.tar.gz -C miaoyc # 解压缩指定的目录要保证已存在，例中miaoyc目录要存在
+tar -zcf miaoyc.tar.gz miaoyc               # 压缩
+tar -zcf miaoyc.tar.gz -C /folder/miaoyc .  # 不带目录压缩
+tar -zxf miaoyc.tar.gz -C miaoyc           # 解压缩指定的目录要保证已存在，例中miaoyc目录要存在
 ```
 
 ### zip解压缩
