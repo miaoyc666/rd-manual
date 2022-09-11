@@ -22,6 +22,7 @@
 - [安装软件](./Install/README.md)
 - [SSH免密](./Efficient/ssh.md)
 - [ohmyzsh](./Efficient/ohmyzsh.md)
+- [ubuntu中文乱码](./Efficient/ubuntu-zh_cn.md)
 
 #### 复杂工具安装
 - [K8s](./K8s/Install.md)

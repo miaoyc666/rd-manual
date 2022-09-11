@@ -1,4 +1,5 @@
-#### centos disk
+centos磁盘扩容
+=
 
 #### 创建分区操作步骤(此处以/dev/sdb为例说明)
 1. 进入分区设置，`fdisk /dev/sdb`

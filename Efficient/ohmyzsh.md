@@ -1,3 +1,6 @@
+oh my zsh
+=
+
 ##### 常规安装
 ```bash
 # 依赖zsh和git，https://ohmyz.sh/#install
