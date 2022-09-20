@@ -8,6 +8,20 @@ slice: `var b = make([]string, 0)`
 map: `tmpMap := map[int]string{0 : "a", 1 : "b"}`  
 slice: `slis := []int{1,2,3,4,5,6,7,8}`  
 数组：`nums := [...]int{1,2,3,4,5,6,7,8}`
+
+#### sync.map赋值读取
+```golang
+aaa := sync.Map{}
+ids := []string{}
+aaa.Store("1", ids)
+info, ok := aaa.Load("1")
+if ok {
+    ids = info.([]string)
+    fmt.Println(ids)
+}
+ids = append(ids, "2")
+ids.Store("1", ids)
+```
  
 #### 遍历
 数组
