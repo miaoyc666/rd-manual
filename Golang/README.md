@@ -57,6 +57,9 @@ c := strings.Join(b, ".") + ".tar.gz"
 // value是interface类型
 value.(string)
 
+// interface转切片
+newValue := v.([]string)
+
 // float转string
 strScore := strconv.FormatFloat(float64(score), 'f', 0, 32)
 str_ := fmt.Sprintf("%f", floatVar)
