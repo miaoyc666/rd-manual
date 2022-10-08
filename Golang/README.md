@@ -126,3 +126,12 @@ gotests -all {$filename}
 go test -v {$testfile} {$sourcefile}
 go test -v {$testfile} {$sourcefile} -test.run {$test case name}
 ```
+
+#### 交叉编译
+GOOS 和GOARCH的有效组合:
+- GOOS：目标平台的操作系统（darwin、freebsd、linux、windows） 
+- GOARCH：目标平台的体系架构（386、amd64、arm）
+- CGO_ENABLED：是否使用cgo
+
+示例：
+`CGO_ENABLED=0 GOOS=linux GOARCH=arm go build -o demo main.go`
