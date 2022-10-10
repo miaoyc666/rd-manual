@@ -46,7 +46,7 @@ git push --force    # 慎重使用
 
 ##### 修改提交记录:
 ```bash
-git rebase -i HEAD~3        # 3此处为可变，数值表示需要修改的最近几条提交的数量
+git rebase -i HEAD~1        # 1此处为可变，数值表示需要修改的最近几条提交的数量
 git commit --amend 
 git rebase --continue
 三条语句组合使用
