@@ -1,13 +1,16 @@
 k8s
 =
 
+
 ## 💚原子命令
 #### 通用命令
 ```bash
-# aciton行动，entity实体
-kubectl ${action} ${entity}
+# command命令，entity实体/资源
+kubectl ${command} ${entity}
 ```
-#### action列表
+#### command命令
+##### 获取所有command：kubectl -h
+##### 常用command如下：
 - apply
 - get 
 - config
@@ -18,12 +21,16 @@ kubectl ${action} ${entity}
 - replace
 
 #### entity列表
+##### 获取所有entity：kubectl api-resources 
+##### 常用entity如下：
 - view
-- namespaces
+- namespaces（ns）
+- deployments（deploy）
 - nodes
 - pod
 - secrets
-- configmap
+- configmap（cm）
+- daemonsets（ds）
 
 ## 💔常见问题
 ##### 1.kubectl命令无权限问题
@@ -135,4 +142,3 @@ kubectl desctibe pods                # 描述所有pod
 ### 8.cert
 检查证书是否过期
 `kubeadm certs check-expiration`
-
