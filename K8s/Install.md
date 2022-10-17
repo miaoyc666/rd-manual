@@ -2,29 +2,53 @@
 
 ###### 说明：自 v1.24 起，Dockershim 已从 Kubernetes 项目中移除。故相比于老版本，v1.24以上需要安装容器运行时接口（CRI）。
 
-### 1.安装CRI，首选containerd
+### 1.安装CRI，首选Containerd
 ##### 官方安装文档：[github](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)
+##### 个人安装文档：[安装Containerd](./Install-containerd.md)
 
-借助Docker源的安装方法：
+
+### 2.安装K8s
 ```bash
-yum install -y yum-utils
-yum-config-manager \
-   --add-repo \
-   https://download.docker.com/linux/centos/docker-ce.repo
-yum install -y containerd.io
-systemctl enable containerd
-systemctl restart containerd
+cat <<EOF >/etc/yum.repos.d/kubernetes.repo
+
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
 ```
 
-### FAQ
+```bash
+# 将 SELinux 设置为 permissive 模式（相当于将其禁用）
+sudo setenforce 0
+sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+
+sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+
+sudo systemctl enable --now kubelet
+```
+
+
+### 故障排查
 #### 1.Kubeadm初始化报错
-##### [ERROR CRI] container runtime is not running
+##### [ERROR CRI]: container runtime is not running
 ##### 解决办法
 ```bash
 rm -rf /etc/containerd/config.toml
 systemctl restart containerd
 
 输入后上述命令后再次执行kubeadm init
+```
+
+#### 2.	[ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables] /proc/sys/net/bridge/bridge-nf-call-iptables does not exist
+##### 解决办法
+```bash
+modprobe br_netfilter
+# echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
 ```
 
 #### 2. kubeadm init或kubeadm config images pull失败
