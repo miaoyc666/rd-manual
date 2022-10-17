@@ -44,9 +44,14 @@ git reset --hard {commit_id}
 git push --force    # 慎重使用
 ```
 
+##### 合并以对方分支为准
+```bash
+git merge -X theirs origin/xxxxx-branch
+```
+
 ##### 修改提交记录:
 ```bash
-git rebase -i HEAD~1        # 1此处为可变，数值表示需要修改的最近几条提交的数量
+git rebase -i HEAD~3        # 3此处为可变，数值表示需要修改的最近几条提交的数量
 git commit --amend 
 git rebase --continue
 三条语句组合使用
@@ -55,7 +60,7 @@ git rebase --continue
 2.git commit --amend
 3.GIT_COMMITTER_DATE="2021-12-26T23:01:07" git commit --amend --date="2021-12-26T23:01:07"
 4.git rebase --continue
-5.git push --force        # 不推荐使用的命令
+5.git push --force        # 慎重使用
 ```
 
 ##### 修改提交用户名和邮箱
@@ -94,3 +99,4 @@ fi
 ### ❌尽量不要使用的命令❌
 ##### 强行推送tag到远端
 `git push --force`
+
