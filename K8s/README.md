@@ -76,12 +76,12 @@ Unable to connect to the server: x509: certificate has expired or is not yet val
 ### 2.node
 #### 2.1 查看集群所有节点的状态
 `kubectl get nodes`
+`kubectl get nodes --show-labels`  # 展示标签
 #### 2.2 查看指定节点详细信息
-`kubectl describe node <节点名称>`
-#### 2.3 给node加标签
-`kubectl label nodes {节点名称} disktype={标签名}`
-#### 2.4 查看node所有标签
-`kubectl get node --show-labels`
+`kubectl describe node <node-name>`
+#### 2.3 增与删
+`kubectl label nodes <node-name> <label-key>=<label-value>`
+`kubectl label nodes <node-name> <label-key>-`
 
 ### 3.pod
 #### 3.1 获取pods
