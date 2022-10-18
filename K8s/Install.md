@@ -32,6 +32,16 @@ sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 ```
 
+### 3.初始化Kubeadm
+#### 3.1 默认使用containerd初始化
+```bash
+kubeadm init --kubernetes-version=v1.25.2 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.46.177.167 --image-repository registry.aliyuncs.com/google_containers
+```
+
+#### 3.2 使用cri-docker初始化
+```bash
+kubeadm init --image-repository registry.aliyuncs.com/google_containers --kubernetes-version=v1.24.1 --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/cri-dockerd.sock
+```
 
 ### 故障排查
 #### 1.Kubeadm初始化报错
