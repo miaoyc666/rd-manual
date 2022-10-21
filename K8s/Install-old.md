@@ -136,9 +136,10 @@ systemctl restart kubelet
 
 ##### Install
 ```bash
-# kube-flannel.yml依赖镜像 
+# kube-flannel.yml依赖镜像
 # quay.io/coreos/flannel:v0.14.0
 # k8s.gcr.io/pause:3.6
+#  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f kube-flannel.yml
 ```
 
@@ -148,10 +149,10 @@ echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
 ```
 
 #### 解决no networks found in /etc/cni/net.d
-```bash
-```
+安装网络插件解决
 
 #### 节点状态NotReady问题
+安装网络插件解决
 
 
 ## 升级K8s
@@ -160,4 +161,3 @@ echo 1 > /proc/sys/net/bridge/bridge-nf-call-iptables
 # install时添加参数
 yum install --nogpgcheck
 ```
-
