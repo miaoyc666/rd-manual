@@ -112,7 +112,7 @@ timeStamp := tt.Unix()
 #### gotests
 ```bash
 # 安装gotests
-go get -u github.com/cweill/gotests/...
+go get github.com/cweill/gotests/...
 
 # env
 export PATH=$PATH:$GOPATH/bin
