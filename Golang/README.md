@@ -1,5 +1,10 @@
 # Golang
 
+#### 打印调用堆栈
+```golang
+import "runtime/debug"
+fmt.Printf("%s", debug.Stack())
+```
 #### 初始化空变量
 map: `var a map[string]string`  
 slice: `var b = make([]string, 0)`
