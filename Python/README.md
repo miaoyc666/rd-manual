@@ -6,9 +6,15 @@
 python3 -m venv ${path}
 ```
 
-##### 生成requirements.txt
+##### 生成当前环境的requirements.txt
 ```bash
 pip freeze > requirements.txt
+```
+
+##### 生成当前项目的requirements.txt
+```bash
+pip install pipreqs
+pipreqs .
 ```
 
 ##### 查找包依赖
