@@ -69,3 +69,8 @@ def md5_base64_hex(string):
     b64_str = base64.b64encode(md5_str.encode('utf-8'))
     return md5_str, b64_str.decode('utf-8')
 ```
+
+##### QA
+###### 1
+Q: ModuleNotFoundError: No module named '_ctypes'
+A: yum install libffi-devel -y
