@@ -22,7 +22,7 @@ pipreqs .
 pip show ${package_name}
 ```
 
-##### 查找包依赖
+##### 只下载包和依赖
 ```bash
 pip download -d ${path} -r requirement.txt
 ```
