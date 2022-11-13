@@ -39,3 +39,6 @@ systemctl start containerd
 ```
 
 #### 5.导入镜像
+```bash
+ctr image import <path/to/image/file> -n <namespace>
+```
