@@ -39,6 +39,7 @@ CREATE TABLE ti.miaoyc_alter_test_all (`time` DateTime, `ioc` String) ENGINE = D
 ```bash
 # 要添加 POPULATE 关键字
 ```
+[POPULATE官方资料](https://clickhouse.com/docs/zh/sql-reference/statements/create/view/)
 
 
 

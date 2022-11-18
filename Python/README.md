@@ -6,9 +6,15 @@
 python3 -m venv ${path}
 ```
 
-##### 生成requirements.txt
+##### 生成当前环境的requirements.txt
 ```bash
 pip freeze > requirements.txt
+```
+
+##### 生成当前项目的requirements.txt
+```bash
+pip install pipreqs
+pipreqs .
 ```
 
 ##### 查找包依赖
@@ -16,7 +22,7 @@ pip freeze > requirements.txt
 pip show ${package_name}
 ```
 
-##### 查找包依赖
+##### 只下载包和依赖
 ```bash
 pip download -d ${path} -r requirement.txt
 ```
@@ -63,3 +69,8 @@ def md5_base64_hex(string):
     b64_str = base64.b64encode(md5_str.encode('utf-8'))
     return md5_str, b64_str.decode('utf-8')
 ```
+
+##### QA
+###### 1
+- Q: ModuleNotFoundError: No module named '_ctypes'
+- A: yum install libffi-devel -y
