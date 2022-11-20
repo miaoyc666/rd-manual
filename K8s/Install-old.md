@@ -2,42 +2,7 @@
 
 ### 先安装docker，再安装k8s（v1.24版本以前需要安装docker）
 ### 1.安装docker
-一键安装docker脚本如下：
-```bash
-# 移除旧版包
-sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-selinux \
-                  docker-engine-selinux \
-                  docker-engine
-
-# 安装依赖
-sudo yum install -y yum-utils \
-           device-mapper-persistent-data \
-           lvm2
-
-# 配置源
-sudo yum-config-manager \
-    --add-repo \
-    https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
-
-# 安装
-sudo yum makecache fast
-sudo yum install -y docker-ce
-
-# 启动
-sudo systemctl enable docker
-sudo systemctl start docker
-
-# 用户配置
-sudo groupadd docker
-sudo usermod -aG docker $USER
-```
+[详细步骤](../Docker/Install.md)
 
 ### 2.修改docker cgroupdriver
 安装完成docker后需修改`/etc/docker/daemon.json`，因为systemd是Kubernetes自带的cgroup管理器, 负责为每个进程分配cgroups。
