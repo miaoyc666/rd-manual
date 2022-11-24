@@ -39,7 +39,7 @@ ids.Store("1", ids)
 ```
  
 #### 遍历
-数组
+array
 ```go
 for k, v:= range nums{
     // k 为下标，v 为对应的值
