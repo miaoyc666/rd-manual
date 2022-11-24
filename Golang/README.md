@@ -1,21 +1,31 @@
 # Golang
 
 #### 打印调用堆栈
-```golang
+```go
 import "runtime/debug"
 fmt.Printf("%s", debug.Stack())
 ```
+
 #### 初始化空变量
-map: `var a map[string]string`  
-slice: `var b = make([]string, 0)`
+```go
+// map
+var a map[string]string 
+// slice
+var b = make([]string, 0)
+```
 
 #### 初始化赋值变量
-map: `tmpMap := map[int]string{0 : "a", 1 : "b"}`  
-slice: `slis := []int{1,2,3,4,5,6,7,8}`  
-数组：`nums := [...]int{1,2,3,4,5,6,7,8}`
+```go
+// map
+`tmpMap := map[int]string{0 : "a", 1 : "b"}
+// slice
+slis := []int{1,2,3,4,5,6,7,8}
+// array
+nums := [...]int{1,2,3,4,5,6,7,8}
+```
 
 #### sync.map赋值读取
-```golang
+```go
 aaa := sync.Map{}
 ids := []string{}
 aaa.Store("1", ids)
@@ -62,7 +72,7 @@ for i < l {
 ```
 
 #### 字符串切分与拼接
-```golang
+```go
 s := "/home/a/a_2022.09.08.1019.dat"
 a := strings.Split(s, ".")
 b := a[:len(a)-1]
