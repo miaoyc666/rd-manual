@@ -12,7 +12,6 @@ passwd
 ### 文件操作
 [压缩和加解密](./tar.md)
 
-
 ### 网络篇
 
 ##### 1.清空路由表
@@ -42,5 +41,3 @@ sudo timedatectl set-timezone Asia/Shanghai
 ```bash
 ntpdate ntp1.aliyun.com
 ```
-
-
