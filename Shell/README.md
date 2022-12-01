@@ -1,7 +1,7 @@
 Shell 
 =
 
-### 用户管理篇
+### 一、用户管理篇
 #### 1.用户管理
 ##### 1.1 新增用户
 ```bash
@@ -9,10 +9,19 @@ useradd <username>
 passwd
 ```
 
-### 文件操作
+### 二、文件操作
 [压缩和加解密](./tar.md)
 
-### 网络篇
+### 三、网络配置篇
+
+##### 网卡配置文件
+```bash
+# ubuntu
+/etc/network/interfaces
+
+# centos
+/etc/sysconfig/network-scripts/ifcfg-*
+```
 
 ##### 1.清空路由表
 ```bash
@@ -41,3 +50,4 @@ sudo timedatectl set-timezone Asia/Shanghai
 ```bash
 ntpdate ntp1.aliyun.com
 ```
+
