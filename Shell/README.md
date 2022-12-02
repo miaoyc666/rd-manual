@@ -18,6 +18,9 @@ passwd
 ```bash
 # ubuntu
 /etc/network/interfaces
+# 或
+/etc/systemd/network/
+
 
 # centos
 /etc/sysconfig/network-scripts/ifcfg-*
