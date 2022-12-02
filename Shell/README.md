@@ -17,6 +17,8 @@ passwd
 ##### 网卡配置文件
 ```bash
 # ubuntu
+/etc/netplan/01-network-manager-all.yaml
+# 或
 /etc/network/interfaces
 # 或
 /etc/systemd/network/
