@@ -13,29 +13,7 @@ passwd
 [压缩和加解密](./tar.md)
 
 ### 三、网络配置篇
-
-##### 网卡配置文件
-```bash
-# ubuntu
-/etc/network/interfaces
-# 或
-/etc/systemd/network/
-
-
-# centos
-/etc/sysconfig/network-scripts/ifcfg-*
-```
-
-##### 1.清空路由表
-```bash
-ip route flush table main
-```
-
-##### 2.关闭防火墙
-```bash
-systemctl stop firewalld
-systemctl stop iptables
-```
+[网络配置](./network.md)
 
 ### 文件系统
 #### 1.查找文件，统计代码行数
