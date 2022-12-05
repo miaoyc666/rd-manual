@@ -9,6 +9,17 @@ useradd <username>
 passwd
 ```
 
+#### 2.添加sudo免密
+```bash
+编辑配置文件
+# centos 
+/etc/sudoers.d/{$user}
+# ubuntu
+/etc/sudoers
+新增：{$user} ALL=(ALL) NOPASSWD:ALL
+举例：miaoyc ALL=(ALL) NOPASSWD:ALL
+```
+
 ### 二、文件操作
 [压缩和加解密](./tar.md)
 
