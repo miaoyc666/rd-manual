@@ -10,6 +10,7 @@
 ##### 个人安装文档：[安装Containerd](./Install-containerd.md)
 
 #### 1.2 次选安装cri-docker
+依赖Docker: [安装Docker](../Docker/Install.md)
 ```bash
 # 由于1.24以及更高版本不支持docker所以安装cri-docker
 # 下载cri-docker 
