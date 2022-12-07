@@ -104,7 +104,7 @@ sudo curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packag
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://mirrors.tuna.tsinghua.edu.cn/kubernetes/apt kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 # 4. 更新 apt 包索引，安装 kubelet、kubeadm 和 kubectl，并锁定其版本
 sudo apt-get update
-sudo apt-get install -y kubelet=v1.25.2 kubeadm=v1.25.2 kubectl=v1.25.2
+sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # ps: 安装指定版本k8s: 
