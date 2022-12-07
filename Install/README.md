@@ -18,6 +18,10 @@ yum install --nogpgcheck ${soft-name}
 ```
 
 ### Apt
+#### 安装指定版本软件
+```bash
+apt install -y ${soft-name}=${version}
+```
 
 ## Mac
 ### Brew
