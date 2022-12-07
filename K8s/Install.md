@@ -122,6 +122,18 @@ kubeadm init --kubernetes-version=v1.25.2 --pod-network-cidr=10.244.0.0/16 --api
 kubeadm init --image-repository registry.aliyuncs.com/google_containers --kubernetes-version=v1.24.1 --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/cri-dockerd.sock
 ```
 
+### 4.安装网络插件
+[kube-flannel.yml](https://github.com/miaoyc666/rd-manual/blob/main/K8s/kube-flannel.yml)
+
+#### Install
+```bash
+# kube-flannel.yml依赖镜像
+# quay.io/coreos/flannel:v0.14.0
+# k8s.gcr.io/pause:3.6
+#  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f kube-flannel.yml
+```
+
 ### 故障排查
 #### 1.Kubeadm初始化报错
 ##### [ERROR CRI]: container runtime is not running
