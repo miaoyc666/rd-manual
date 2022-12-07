@@ -131,6 +131,17 @@ iptables -t nat -F && iptables -t nat -X
 iptables -t raw -F && iptables -t raw -X
 iptables -t mangle -F && iptables -t mangle -X
 systemctl restart docker
+
+### 4.安装网络插件
+[kube-flannel.yml](https://github.com/miaoyc666/rd-manual/blob/main/K8s/kube-flannel.yml)
+
+#### Install
+```bash
+# kube-flannel.yml依赖镜像
+# quay.io/coreos/flannel:v0.14.0
+# k8s.gcr.io/pause:3.6
+#  kubectl apply -f https://raw.githubusercontent.com/flannel-io/flannel/master/Documentation/kube-flannel.yml
+kubectl apply -f kube-flannel.yml
 ```
 
 ### 故障排查
