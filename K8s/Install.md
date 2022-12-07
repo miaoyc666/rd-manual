@@ -71,6 +71,7 @@ systemctl daemon-reload; systemctl enable cri-docker --now
 
 ### 2.安装K8s
 ```bash
+### centos
 cat <<EOF >/etc/yum.repos.d/kubernetes.repo
 
 [kubernetes]
@@ -82,9 +83,7 @@ repo_gpgcheck=0
 gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
        http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-```
 
-```bash
 # 将 SELinux 设置为 permissive 模式（相当于将其禁用）
 sudo setenforce 0
 sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
