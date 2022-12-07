@@ -17,10 +17,10 @@ yum install -y ${soft-name}-${version}
 yum install --nogpgcheck ${soft-name}
 ```
 
-### Apt
+### Apt-get
 #### 安装指定版本软件
 ```bash
-apt install -y ${soft-name}=${version}
+apt-get install -y ${soft-name}=${version}
 ```
 
 ## Mac
