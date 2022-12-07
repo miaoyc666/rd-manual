@@ -127,3 +127,6 @@ modprobe br_netfilter
 ```bash
 kubeadm init --kubernetes-version=v1.25.2 --pod-network-cidr=10.244.0.0/16 --apiserver-advertise-address=10.46.177.167 --image-repository registry.aliyuncs.com/google_containers
 ```
+
+#### 4.The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B53DC80D13EDEF05
