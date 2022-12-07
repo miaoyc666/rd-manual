@@ -122,6 +122,17 @@ kubeadm init --kubernetes-version=v1.25.2 --pod-network-cidr=10.244.0.0/16 --api
 kubeadm init --image-repository registry.aliyuncs.com/google_containers --kubernetes-version=v1.24.1 --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/cri-dockerd.sock
 ```
 
+#### 3.3 清理节点
+```bash
+kubeadm reset -f
+rm -rf /etc/cni /etc/kubernetes /var/lib/dockershim /var/lib/etcd /var/lib/kubelet /var/run/kubernetes ~/.kube/*
+iptables -F && iptables -X
+iptables -t nat -F && iptables -t nat -X
+iptables -t raw -F && iptables -t raw -X
+iptables -t mangle -F && iptables -t mangle -X
+systemctl restart docker
+```
+
 ### 故障排查
 #### 1.Kubeadm初始化报错
 ##### [ERROR CRI]: container runtime is not running
@@ -148,3 +159,6 @@ kubeadm init --kubernetes-version=v1.25.2 --pod-network-cidr=10.244.0.0/16 --api
 
 #### 4.The following signatures couldn't be verified because the public key is not available: NO_PUBKEY B53DC80D13EDEF05
 apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B53DC80D13EDEF05
+
+#### 5.running with swap on is not supported, please disable swap!
+swapoff -a
