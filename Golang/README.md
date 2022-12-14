@@ -125,6 +125,10 @@ timeString := t.Unix().Format("2006-01-02 15:04:05")
 loc, _ := time.LoadLocation("Asia/Shanghai")
 tt, _ := time.ParseInLocation("2006-01-02 15:04:05", timeString, loc)
 timeStamp := tt.Unix()
+
+//获取两天前的时间
+currentTime := time.Now()
+oldTime := currentTime.AddDate(0, 0, -2)
 ```
 
 #### gotests
