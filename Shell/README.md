@@ -16,8 +16,8 @@ passwd
 /etc/sudoers.d/{$user}
 # ubuntu
 /etc/sudoers
-新增：{$user} ALL=(ALL) NOPASSWD:ALL
-举例：miaoyc ALL=(ALL) NOPASSWD:ALL
+新增: {$user} ALL=(ALL) NOPASSWD:ALL
+举例: miaoyc ALL=(ALL) NOPASSWD:ALL
 ```
 
 ### 二、文件操作
