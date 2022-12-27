@@ -26,3 +26,5 @@ zh_CN GB2312
 ```bash
 sudo locale-gen
 ```
+
+#### 5、reboot
