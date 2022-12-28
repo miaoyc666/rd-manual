@@ -2,6 +2,7 @@
 Personal R&D manual, command and syntax quick check，R&amp;D manual
 
 #### Index
+- [Ceph](./Ceph/Readme.md)
 - [Clickhouse](./Clickhouse/README.md)
 - [Debug](./Debug/README.md)
 - [Docker](./Docker/README.md)
@@ -22,7 +23,7 @@ Personal R&D manual, command and syntax quick check，R&amp;D manual
 #### 提升开发效率的技巧和工具
 - [安装软件](./Install/README.md)
 - [SSH免密](./Efficient/ssh.md)
-- [ohmyzsh](./Efficient/ohmyzsh.md)
+- [oh my zsh](./Efficient/ohmyzsh.md)
 - [ubuntu中文乱码](./Efficient/ubuntu-zh_cn.md)
 - [压缩和加解密](./Shell/tar.md)
 
