@@ -6,7 +6,10 @@ Install
 osd数量，单机版osd数量为1，集群版osd数量>=3.
 
 ### 安装
-
+```bash 
+curl --silent --remote-name --location https://github.com/ceph/ceph/raw/quincy/src/cephadm/cephadm
+chmod +x cephadm
+```
 
 ### 参考文档
 - [cephadm](https://docs.ceph.com/en/quincy/cephadm/#cephadm)

@@ -174,3 +174,9 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B53DC80D13EDEF05
 
 #### 5.running with swap on is not supported, please disable swap!
 swapoff -a
+
+#### 6. 1 node(s) had untolerated taint {node-role.kubernetes.io/control-plane: }
+移除污点
+```bash 
+kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+```
