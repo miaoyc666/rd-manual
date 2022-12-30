@@ -31,6 +31,7 @@ kubectl ${command} ${entity}
 - secrets
 - configmap（cm）
 - daemonsets（ds）
+- pv
 - pvc
 - service（svc）
 
