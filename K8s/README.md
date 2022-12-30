@@ -32,7 +32,7 @@ kubectl ${command} ${entity}
 - configmap（cm）
 - daemonsets（ds）
 - pvc
-- service
+- service（svc）
 
 ## 💔常见问题
 ##### 1.kubectl命令无权限问题
