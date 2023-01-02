@@ -180,3 +180,7 @@ swapoff -a
 ```bash 
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
+
+##### 7. /proc/sys/net/ipv4/ip_forward contents are not set to 1
+`echo 1 > /proc/sys/net/ipv4/ip_forward`
+```
