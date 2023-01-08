@@ -147,7 +147,7 @@ kubectl apply -f kube-flannel.yml
 
 ### 故障排查
 #### 1.Kubeadm初始化报错
-##### [ERROR CRI]: container runtime is not running
+##### 在已经安装containerd并且状态是running情况下，kubeadm init提示 [ERROR CRI]: container runtime is not running
 ##### 解决办法：
 ```bash
 rm -rf /etc/containerd/config.toml
