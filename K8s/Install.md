@@ -5,6 +5,12 @@
 ###### 说明：自 v1.24 起，Dockershim 已从 Kubernetes 项目中移除。故相比于老版本，v1.24以上需要安装容器运行时接口（CRI）。若需要在v1.24版本以上使用docker命令，需要安装docker和cri-docker。
 
 ### 1.安装CRI
+
+运行时	Unix   域套接字  
+containerd	unix:///var/run/containerd/containerd.sock  
+CRI-O	unix:///var/run/crio/crio.sock  
+Docker Engine（使用 cri-dockerd） unix:///var/run/cri-dockerd.sock
+
 #### 1.1 首选containerd
 ##### 官方安装文档：[github](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)
 ##### 个人安装文档：[安装Containerd](./Install-containerd.md)
