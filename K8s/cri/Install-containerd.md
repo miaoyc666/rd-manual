@@ -17,6 +17,7 @@ modprobe br_netfilter
 ```
 
 ### 2.安装containerd
+2.1或2.1章节仅执行一次即可
 #### 2.1 源安装containerd
 ```bash
 # centos: 配置yum源（此处使用阿里源）
