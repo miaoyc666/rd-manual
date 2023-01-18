@@ -1,6 +1,9 @@
 安装containerd
 =
 
+#### 0.写在前面
+[安装containerd](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)
+
 #### 1.加载内核模块overlay和br_netfilter
 创建 /etc/modules-load.d/containerd.conf 配置文件:
 ```bash
