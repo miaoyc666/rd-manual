@@ -76,10 +76,10 @@ sysctl --system
 #### 3.1 默认使用containerd初始化
 ```bash
 # 默认使用containerd初始化
-kubeadm init --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/containerd/containerd.sock
+kubeadm init --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/containerd/containerd.sock
 
 # 使用cri-docker初始化
-kubeadm init --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/cri-dockerd.sock
+kubeadm init --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/cri-dockerd.sock
 ```
 
 #### 3.2 清理节点
@@ -94,7 +94,7 @@ systemctl restart docker
 ```
 
 ### 4.安装网络插件
-[kube-flannel.yml](https://github.com/miaoyc666/rd-manual/blob/main/K8s/kube-flannel.yml)
+[kube-flannel.yml](https://github.com/miaoyc666/rd-manual/blob/main/K8s/cni/kube-flannel.yml)
 ```bash
 # kube-flannel.yml依赖镜像
 # quay.io/coreos/flannel:v0.14.0
