@@ -1,11 +1,11 @@
 安装containerd
 =
 
-#### 0.写在前面
-[安装containerd](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)
+### 0.写在前面
+[官方文档-安装containerd](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)
 
-#### 1.加载内核模块overlay和br_netfilter
-创建 /etc/modules-load.d/containerd.conf 配置文件:
+### 1.内核模块配置
+加载内核模块overlay和br_netfilter, 创建/etc/modules-load.d/containerd.conf 配置文件:
 ```bash
 cat << EOF > /etc/modules-load.d/containerd.conf
 overlay
@@ -16,7 +16,22 @@ modprobe overlay
 modprobe br_netfilter
 ```
 
-#### 2.下载安装containerd
+### 2.安装containerd
+#### 2.1 源安装containerd
+```bash
+# centos: 配置yum源（此处使用阿里源）
+wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum install -y containerd.io
+
+# ubuntu: 配置apt源（此处使用阿里源）
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://mirrors.aliyun.com/docker-ce/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+apt update
+apt install -y containerd.io
+```
+
+#### 2.2 下载安装containerd
 ```bash
 # install containerd
 wget https://github.com/containerd/containerd/releases/download/v1.6.14/containerd-1.6.14-linux-amd64.tar.gz
@@ -70,19 +85,10 @@ mkdir -p /opt/cni/bin
 tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
 ```
 
-
-#### 2.源安装containerd
-配置yum源（此处使用阿里源）
-```bash
-wget -O /etc/yum.repos.d/docker-ce.repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-
-yum install -y containerd.io
-```
-
-#### 3.配置containerd
+### 3.配置containerd
 生成containerd的配置文件
 ```bash
-mkdir /etc/containerd -p 
+mkdir -p /etc/containerd
 containerd config default > /etc/containerd/config.toml # 生成配置文
 vim /etc/containerd/config.toml # 编辑配置文件
 ```
@@ -90,13 +96,13 @@ vim /etc/containerd/config.toml # 编辑配置文件
 - SystemdCgroup = false 改为 SystemdCgroup = true
 - sandbox_image = "k8s.gcr.io/pause:3.6" 改为 sandbox_image = "registry.aliyuncs.com/google_containers/pause:3.6"
 
-#### 4.启动
+### 4.启动
 ```bash
 systemctl enable containerd
 systemctl start containerd
 ```
 
-#### 5.导入镜像
+### 5.导入镜像
 ```bash
 ctr image import <path/to/image/file> -n <namespace>
 ```
