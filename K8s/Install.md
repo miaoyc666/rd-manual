@@ -15,7 +15,7 @@ Docker Engine（使用 cri-dockerd） unix:///var/run/cri-dockerd.sock
 ##### 个人安装文档：[安装Containerd](./cri/Install-containerd.md)
 
 #### 1.2 次选安装cri-docker
-依赖Docker: [安装Docker](./cri/install-cri-docker.md)
+依赖Docker: [安装cri-docker](./cri/install-cri-docker.md)
 
 ### 2.安装K8s
 #### 2.1 centos安装
