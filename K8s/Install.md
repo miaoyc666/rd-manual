@@ -140,5 +140,10 @@ modprobe br_netfilter
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
 
+<!-- #### 7. 0/1 nodes are available: 1 node(s) had untolerated taint {node.kubernetes.io/not-ready: }. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling
+```bash 
+kubectl taint vm111 node.kubernetes.io/not-ready:NoSchedule-
+``` -->
+
 ##### 7. /proc/sys/net/ipv4/ip_forward contents are not set to 1
 `echo 1 > /proc/sys/net/ipv4/ip_forward`
