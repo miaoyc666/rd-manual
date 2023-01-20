@@ -54,10 +54,10 @@ EOF
 # 4. 更新 apt 包索引，安装 kubelet、kubeadm 和 kubectl，并锁定其版本
 apt update
 apt install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
+apt-mark hold kubelet kubeadm kubectl
 
 # ps: 安装指定版本k8s: 
-sudo apt-get install -y kubelet=1.25.2-00 kubeadm=1.25.2-00 kubectl=1.25.2-00
+apt-get install -y kubelet=1.25.2-00 kubeadm=1.25.2-00 kubectl=1.25.2-00
 ```
 
 #### 2.3 修改内核运行参数
