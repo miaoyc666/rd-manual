@@ -102,6 +102,7 @@ vim /etc/containerd/config.toml # 编辑配置文件
 systemctl enable containerd
 systemctl start containerd
 
+# 这一步很关键
 crictl config runtime-endpoint unix:///var/run/containerd/containerd.sock
 ```
 
