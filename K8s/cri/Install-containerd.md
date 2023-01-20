@@ -101,6 +101,8 @@ vim /etc/containerd/config.toml # 编辑配置文件
 ```bash
 systemctl enable containerd
 systemctl start containerd
+
+crictl config runtime-endpoint unix:///var/run/containerd/containerd.sock
 ```
 
 ### 5.导入镜像
