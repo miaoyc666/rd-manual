@@ -11,7 +11,8 @@
 ##### 重启网络服务
 
 
-##### /etc/netplan/01-network-manager-all.yaml
+##### 配置静态ip
+1.修改文件内容：/etc/netplan/01-network-manager-all.yaml
 ```yaml
 # Let NetworkManager manage all devices on this system
 network:
@@ -26,6 +27,10 @@ network:
             nameservers:
               addresses: [8.8.8.8,8.8.4.4,192.168.3.1]
     version: 2
+```
+2.netplan apply
+```bash
+netplan安装：apt install netplan.io
 ```
 
 #### 命令
