@@ -5,6 +5,15 @@ Postgres
 `psql -h <host> -U <username> -p <port> -d <dbname>`
 
 ### 1.增
+#### 
+```sql
+# 创建用户
+REATE USER admin WITH PASSWORD 'Admin123!';
+# 赋予库权限
+GRANT ALL PRIVILEGES ON DATABASE xxx TO admin;
+# 赋予表权限
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin;
+```
 
 ### 2.删
 
