@@ -72,3 +72,6 @@ WHERE (database IN ('test')) AND (table IN ('test')) AND (partition LIKE '2022-1
 GROUP BY partition
 ORDER BY partition ASC
 ```
+
+### 四、组建集群
+[集群设置](https://github.com/miaoyc666/clickhouse-setup)
