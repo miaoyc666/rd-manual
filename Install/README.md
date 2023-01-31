@@ -17,6 +17,11 @@ yum install --nogpgcheck ${soft-name}
 ```
 
 ### Apt-get
+#### 查看apt已安装软件列表
+```bash
+apt list --installed
+```
+
 #### 获取软件的全部版本
 ```bash
 apt-cache madison ${soft-name}
