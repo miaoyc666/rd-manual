@@ -1,24 +1,35 @@
 # GIT
 
-### ✅常用命令✅
+### ✅Basic Commands✅
+```bash
+# delete local branch
+git branch -d localBranchName
+```
 
-##### 新建tag
+### ✅Low Frequency Commands✅
+##### delete branch
+```bash
+# delete remote branch
+git push origin --delete remoteBranchName
+```
+
+##### create tag
 `git tag <tag_name>`
 
-##### 删除tag
+##### delete tag
 `git tag -d <tag_name>`
 
-##### 推送tag
+##### push tag to remote
 `git push --tags`
 `git push --tag`
 
-##### 控制台命令行设置为彩色输出
+##### color ui output
 `git config color.ui true`
 
 ### 🔶Git lfs🔶
 ##### Install
 ```bash
-# git lfs要求git version >= 1.8.2
+# git lfs need git version >= 1.8.2
 yum install git-lfs -y
 git lfs instal
 ```
