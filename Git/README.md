@@ -20,8 +20,10 @@ git push origin --delete remoteBranchName
 `git tag -d <tag_name>`
 
 ##### push tag to remote
-`git push --tags`
-`git push --tag`
+```bash
+git push --tags
+git push --tag
+```
 
 ##### color ui output
 `git config color.ui true`
