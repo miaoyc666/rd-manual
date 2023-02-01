@@ -13,14 +13,15 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
-##### create tag
-`git tag <tag_name>`
-
-##### delete tag
-`git tag -d <tag_name>`
-
-##### push tag to remote
+##### tag
 ```bash
+# 清除远程已经不存在的分支的跟踪分
+git fetch -p
+# create tag
+git tag <tag_name>
+# delete tag
+git tag -d <tag_name>
+# push tag to remote
 git push --tags
 git push --tag
 ```
