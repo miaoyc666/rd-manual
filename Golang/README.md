@@ -100,6 +100,9 @@ str_ := fmt.Sprintf("%f", floatVar)
 str := strconv.Itoa(score)
 int_ := fmt.Sprintf("%d", intVar)
 
+// string转int
+int, err := strconv.Atoi(string)
+
 // string转long
 n, _ := strconv.ParseInt(tid, 10, 64)
 
