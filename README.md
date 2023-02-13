@@ -6,11 +6,13 @@ Personal R&D manual, command and syntax quick check，R&amp;D manual
 - [Clickhouse](./Clickhouse/README.md)
 - [Debug](./Debug/README.md)
 - [Docker](./Docker/README.md)
+- [ES](./ES/Install.md)
 - [Git](./Git/README.md)
 - [Golang](./Golang/README.md)
 - [HDFS](./HDFS/README.md)
 - [K8s](./K8s/README.md)
 - [Mongodb](./Mongodb/README.md)
+- [Minio](./Minio/Readme.md)
 - [Mysql](./Mysql/README.md)
 - [Nebula](./Nebula/README.md)
 - [Nginx](./Nginx/README.md)
@@ -19,6 +21,7 @@ Personal R&D manual, command and syntax quick check，R&amp;D manual
 - [Redis](./Redis/README.md)
 - [Shell](./Shell/README.md)
 - [Test](./Test/README.md)
+- [Traefik](./Traefik/README.md)
 
 #### 提升开发效率的技巧和工具
 - [安装软件](./Install/README.md)
