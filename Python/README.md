@@ -83,4 +83,5 @@ def md5_base64_hex(string):
 - Q: psycopg2安装失败, centos
 - A: yum install postgresql-devel*
 
-yum install postgresql-devel*
+- Q: psycopg2安装失败, mac
+- A: pip3 install psycopg2-binary
