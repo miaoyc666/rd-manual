@@ -78,3 +78,9 @@ def md5_base64_hex(string):
 ###### 2
 - Q: 致命错误：Python.h：没有那个文件或目录
 - A: sudo yum install python3-devel
+
+###### 3
+- Q: psycopg2安装失败, centos
+- A: yum install postgresql-devel*
+
+yum install postgresql-devel*
