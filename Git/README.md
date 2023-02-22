@@ -34,7 +34,15 @@ git push --tag
 ```bash
 # git lfs need git version >= 1.8.2
 yum install git-lfs -y
-git lfs instal
+git lfs install
+```
+
+### 🔶Git Submodule🔶
+##### 
+```bash
+git submodule add git@github.com:miaoyc666/pyArsenal.git
+git submodule init
+git submodule update
 ```
 
 ##### 使用步骤

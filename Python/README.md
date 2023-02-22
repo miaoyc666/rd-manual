@@ -73,4 +73,15 @@ def md5_base64_hex(string):
 ##### QA
 ###### 1
 - Q: ModuleNotFoundError: No module named '_ctypes'
-- A: yum install libffi-devel -y
+- A: sudo yum install libffi-devel -y
+
+###### 2
+- Q: 致命错误：Python.h：没有那个文件或目录
+- A: sudo yum install python3-devel
+
+###### 3
+- Q: psycopg2安装失败, centos
+- A: yum install postgresql-devel*
+
+- Q: psycopg2安装失败, mac
+- A: pip3 install psycopg2-binary
