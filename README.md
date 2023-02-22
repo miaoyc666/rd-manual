@@ -28,6 +28,7 @@ Personal R&D manual, command and syntax quick check，R&amp;D manual
 - [SSH免密](./Efficient/ssh.md)
 - [oh my zsh](./Efficient/ohmyzsh.md)
 - [ubuntu中文乱码](./Efficient/ubuntu-zh_cn.md)
+- [tmux极简使用](./Efficient/tmux.md)
 - [压缩和加解密](./Shell/tar.md)
 
 #### 复杂工具安装
