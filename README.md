@@ -1,5 +1,6 @@
 # rd-manual
-Personal R&D manual, command and syntax quick check，R&amp;D manual
+- Personal R&D manual
+- Command and syntax quick check
 
 #### Index
 - [Ceph](./Ceph/Readme.md)
