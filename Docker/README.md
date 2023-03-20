@@ -11,13 +11,23 @@ docker run -d -t {image_id}
 ##### 1.导出镜像
 ```bash
 docker save -o ./test.tar test:v1.0.0
+gzip test.tar test.tar.gz
 ```
 
 ##### 2.导入镜像
 ```bash
-docker load  --input ./test.tar 
+docker load  --input ./test.tar.gz
 ```
 
+##### 3.容器转镜像
+```bash
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+参数说明：
+-a :提交的镜像作者；
+-c :使用Dockerfile指令来创建镜像；
+-m :提交时的说明文字；
+-p :在commit时，将容器暂停
+```
 
 ### docker-compose基础
 ##### 命令说明
