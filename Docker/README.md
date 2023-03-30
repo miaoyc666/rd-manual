@@ -27,7 +27,11 @@ docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 -c :使用Dockerfile指令来创建镜像；
 -m :提交时的说明文字；
 -p :在commit时，将容器暂停
+
+# example
+docker commit -a "miaoyc@xxx.com" -m "add user miaoyc" 74df600453b5  miaoyc-xxx:v5.0.0
 ```
+
 
 ### docker-compose基础
 ##### 命令说明
