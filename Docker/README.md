@@ -12,6 +12,9 @@ docker run -d -t {image_id}
 ```bash
 docker save -o ./test.tar test:v1.0.0
 gzip test.tar test.tar.gz
+
+# or one cmd
+docker save test:v1.0.0 | gzip > ./test.tar
 ```
 
 ##### 2.导入镜像
