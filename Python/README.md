@@ -32,6 +32,20 @@ pip download -d ${path} -r requirement.txt
 python -m pyftpdlib -d .
 ```
 
+##### 批量重命名
+```python
+#!/usr/bin/env python
+import os
+path = "."
+fileList = os.listdir(path)
+for i in fileList:
+    if ".ts" != os.path.splitext(i)[-1]:
+        continue
+    oldname = path + os.sep + i
+    newname = ".".join(oldname.split(".")[2:])
+    os.rename(oldname, newname)
+```
+
 ##### pip安装
 ```bash
 # py2
