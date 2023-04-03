@@ -14,3 +14,6 @@ for mac:
 1. run bin/kibana
 2. http://localhost:5601 
 ```
+
+#### 集群配置
+[es_setup](https://github.com/miaoyc666/es-setup)
