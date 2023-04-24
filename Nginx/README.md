@@ -1,36 +1,52 @@
 # Nginx
 
-### Api反向代理转发server
+### 经典反向代理样例
 ```bash
-    server {
-        listen      80;
-        server_name a.xx.com;
+server {
+  listen 80;
+  server_name myc.ink;
+  rewrite ^(.*)$ https://${server_name}$1 permanent;
+}
 
-        access_log   /var/log/nginx/a_access.log main;
-        error_log    /var/log/nginx/a_error.log;
+server {
+  listen       443 ssl http2 default_server;
+  listen       [::]:443 ssl http2 default_server;
+  server_name  myc.ink www.myc.ink;
+  
+  access_log   /var/log/nginx/myc.ink.log main;
+  error_log    /var/log/nginx/myc.ink.error.log;
 
-        proxy_temp_path       /var/nginx/proxy_temp/ 1 2;
-        fastcgi_temp_path     /var/nginx/fastcgi_temp/ 1 2;
+  ssl_certificate "/etc/nginx/cert/myc.ink.pem";
+  ssl_certificate_key "/etc/nginx/cert/myc.ink.key";
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+  ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+  ssl_prefer_server_ciphers on;
+  ssl_session_cache shared:SSL:1m;
+  ssl_session_timeout 5m;
 
-        gzip                       on;
-        gzip_vary                  on;
-        gzip_proxied               any;
-        gzip_min_length            1k;
-        gzip_comp_level            3;
-        gzip_types text/plain application/json application/x-javascript application/javascript text/css;
+  gzip                       on;
+  gzip_vary                  on;
+  gzip_proxied               any;
+  gzip_min_length            1k;
+  gzip_comp_level            3;
+  gzip_types text/plain application/json application/x-javascript application/javascript text/css;
 
-        location /api/v1/ {
-            proxy_set_header Host $Host;
-            proxy_pass_request_headers on;
-            proxy_set_header X-Forwarded-Host $Host;
-            proxy_set_header X-Forwarded-Proto $scheme;
-            proxy_set_header X-Real-IP         $remote_addr;
-            proxy_http_version 1.1;
-            proxy_set_header Connection "";
-            proxy_pass http://open_api_v1/;
-        }
-    }
-```
+  location / {
+    root /data/web/output;
+    index index.html index.htm;
+  }
+  
+  location /api/v1/ {
+    proxy_set_header Host $Host;
+    proxy_pass_request_headers on;
+    proxy_set_header X-Forwarded-Host $Host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Real-IP         $remote_addr;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "";
+    proxy_pass http://open_api_v1/;
+  }
+}
 
 ### 端口转发加base auth
 ```bash
@@ -45,7 +61,7 @@ server {
         autoindex on;
         autoindex_exact_size on;
         autoindex_localtime on;
-        proxy_set_header Host 10.249.171.45;
+        proxy_set_header Host 10.95.xx.xx;
         proxy_pass http://localhost:8090/;
     }
 }
@@ -55,13 +71,13 @@ server {
 #### 带前缀转发
 ```config
 location /api/v1/ {
-            proxy_pass http://open_api_v1;
+    proxy_pass http://open_api_v1;
 }
 ```
 #### 不带前缀转发
 与带前缀转发写法区别仅仅是一个`/`
 ```config
 location /api/v1/ {
-            proxy_pass http://open_api_v1/;
+    proxy_pass http://open_api_v1/;
 }
 ```
