@@ -1,6 +1,9 @@
 Traefik
 =
 
+#### 安装
+[安装](Install.md)
+
 #### basicauth用户密码
 ```bash 
 # 生成用户密钥
