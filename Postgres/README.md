@@ -13,6 +13,9 @@ REATE USER admin WITH PASSWORD 'Admin123!';
 GRANT ALL PRIVILEGES ON DATABASE xxx TO admin;
 # 赋予表权限
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin;
+
+# 新增索引
+CREATE INDEX idx_name ON tb_name(field_name);
 ```
 
 ### 2.删
