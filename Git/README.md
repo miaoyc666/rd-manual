@@ -13,6 +13,15 @@ git branch -d localBranchName
 git push origin --delete remoteBranchName
 ```
 
+##### proxy
+```bash
+git fetch -p
+git config --global http.proxy http://127.0.0.1:1080
+git config --global https.proxy http://127.0.0.1:1080
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+```
+
 ##### tag
 ```bash
 # 清除远程已经不存在的分支的跟踪分
