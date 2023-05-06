@@ -30,7 +30,7 @@ network:
 ```
 2.netplan apply
 ```bash
-netplan安装：apt install netplan.io
+netplan安装: apt install netplan.io
 ```
 
 #### 命令
