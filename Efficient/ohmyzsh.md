@@ -4,6 +4,8 @@ oh my zsh
 ##### 常规安装
 ```bash
 # 依赖zsh和git，https://ohmyz.sh/#install
+# yum install zsh
+# apt install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
