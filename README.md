@@ -15,6 +15,7 @@
 - [K8s](K8s/README.md)
 - [Linux](Linux/README.md)
 - [Minio](Minio/Readme.md)
+- [Modular](Modular/Readme.md)
 - [Mongodb](Mongodb/README.md)
 - [Mysql](Mysql/README.md)
 - [Nebula](Nebula/README.md)
