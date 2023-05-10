@@ -51,8 +51,8 @@ apt remove docker docker.io containerd runc
 apt install -y ca-certificates curl gnupg lsb-release 
 apt install -y software-properties-common
 
-# 添加密钥
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add
+# 添加清华源密钥
+curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add
 
 # 配置源
 add-apt-repository -y "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
