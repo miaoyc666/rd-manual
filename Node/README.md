@@ -30,7 +30,13 @@ npm install -g yarn
 # 用 nvm ls可查看所有已安装到本地的nodejs 版本
 ```
 
-#### 3.使用yarn
+#### 3. pnpm
+```bash
+# pnpm是对npm的改进，优化了包存储，兼容npm，是升级版
+npm install pnpm -g
+```
+
+#### 4.使用yarn
 ```bash
 yarn
 yarn build
