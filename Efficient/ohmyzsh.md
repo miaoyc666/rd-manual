@@ -7,6 +7,8 @@ oh my zsh
 # yum install zsh
 # apt install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# 国内镜像
+# sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 ```
 
 ##### 自动补全配置和语法高亮配置
