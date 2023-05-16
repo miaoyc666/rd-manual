@@ -42,7 +42,7 @@ ln -s f1 f3
 find . -name "*.c" | xargs grep -v "^$" | wc -l
 ```
 
-### 系统篇
+### 四、系统篇
 #### 1.更改时区
 ```bash
 sudo timedatectl set-timezone Asia/Shanghai
@@ -51,5 +51,10 @@ sudo timedatectl set-timezone Asia/Shanghai
 #### 2.同步ntp时间
 ```bash
 ntpdate ntp1.aliyun.com
+```
+
+#### 3.更改hostname
+```bash
+修改/etc/hostname
 ```
 
