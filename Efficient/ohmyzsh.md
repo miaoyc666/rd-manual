@@ -11,6 +11,14 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 # sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
 ```
 
+##### 修改主题
+```bash
+修改~/.zshrc的ZSH_THEME配置，可以修改主题
+
+# 主题推荐
+ZSH_THEME="bira"
+```
+
 ##### 自动补全配置和语法高亮配置
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
