@@ -27,6 +27,7 @@
 - [Shell](Shell/README.md)
 - [Test](Test/README.md)
 - [Traefik](Traefik/README.md)
+- [VPN](VPN/README.md)
 
 #### 提升开发效率的技巧和工具
 - [安装软件](Install/README.md)
