@@ -61,6 +61,13 @@ docker run -itd --restart=always --name miaoyc-xxx miaoyc-xxx:v5.0.0
 ```
 
 ### docker-compose
+##### 安装
+```bash
+wget https://github.com/docker/compose/releases/download/v2.18.0/docker-compose-linux-x86_64
+chmod +x docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
+```
+
 ##### 基础命令说明
 ```bash
 # 启动容器
