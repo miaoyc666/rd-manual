@@ -68,6 +68,33 @@ systemctl enable docker
 systemctl start docker
 ```
 
+#### 1.4 Debian
+```bash
+# 移除旧版包
+sudo apt-get remove -y docker docker-engine docker.io containerd runc
+
+# 安装依赖
+sudo apt-get update
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+# 添加Docker 官方 GPG key
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+
+# 配置源
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+
+# 更新源
+sudo apt-get update
+
+# 安装docker-ce和containerd
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# 启动
+systemctl enable docker
+systemctl start docker
+```
+
 ### 2.修改docker cgroupdriver
 安装完成docker后需修改`/etc/docker/daemon.json`，因为systemd是Kubernetes自带的cgroup管理器, 负责为每个进程分配cgroups。
 ```json
