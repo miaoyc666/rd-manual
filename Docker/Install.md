@@ -66,6 +66,10 @@ apt install -y docker-ce
 # 启动
 systemctl enable docker
 systemctl start docker
+
+# 用户配置
+sudo groupadd docker
+sudo usermod -aG docker $USER
 ```
 
 #### 1.4 Debian
@@ -93,6 +97,10 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 # 启动
 systemctl enable docker
 systemctl start docker
+
+# 用户配置
+sudo groupadd docker
+sudo usermod -aG docker $USER
 ```
 
 ### 2.修改docker cgroupdriver
