@@ -53,8 +53,18 @@ sudo timedatectl set-timezone Asia/Shanghai
 ntpdate ntp1.aliyun.com
 ```
 
-#### 3.更改hostname
+#### 3.修改日期时间
 ```bash
+# 同时修改日期时间, 注意要加双引号, 日期与时间之间有一空格
+date -s "2023-05-03 14:15:00"  
+# 修改完后, 系统时间写入cmos
+clock -w
+```
+
+#### 4.更改hostname
+```bash
+# 根据操作系统不同，分别修改以下文件
 修改/etc/hostname
+修改/etc/hosts
 ```
 
