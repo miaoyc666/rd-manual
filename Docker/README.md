@@ -57,7 +57,13 @@ docker exec -it miaoyc-xxx netstat -tunlp
 
 ##### 8.使容器保持运行状态
 ```bash
+# 主要是添加 --restart=always
 docker run -itd --restart=always --name miaoyc-xxx miaoyc-xxx:v5.0.0
+```
+
+##### 9.查看容器状态
+```bash
+docker stats <container_id>
 ```
 
 ### docker-compose
