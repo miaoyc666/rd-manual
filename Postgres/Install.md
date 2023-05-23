@@ -16,4 +16,6 @@ services:
       - ./data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    mem_limit: 8g
+    cpus: 4
 ```
