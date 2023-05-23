@@ -2,7 +2,11 @@ Postgres
 =
 
 #### 0.连接
-`psql -h <host> -U <username> -p <port> -d <dbname>`
+```bash
+psql -h <host> -U <username> -p <port> -d <dbname>
+或
+psql postgresql://<username>:<passwd>@<host>:<port>
+```
 
 ### 1.增
 #### 
