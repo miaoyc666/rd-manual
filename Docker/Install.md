@@ -40,7 +40,15 @@ sudo usermod -aG docker $USER
 
 #### 1.2 Centos FAQ
 ##### Could not fetch/save url https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo to file /etc/yum.repos.d/docker-ce.repo: [Errno 14] curl#60 - "Peer's Certificate issuer is not recognized."
-`sudo yum-config-manager --add-repo http://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo`
+第一步，执行`sudo yum-config-manager --add-repo http://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo`  
+若第一步执行后未解决问题，执行步骤二，步骤如下：  
+```bash
+解决方法：
+1.# vim /etc/yum.conf
+2.sslverify=false
+3.# yum clean all
+4.# yum repolist
+```
 
 #### 1.3 Ubuntu
 ```bash
