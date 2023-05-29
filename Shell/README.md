@@ -42,6 +42,14 @@ ln -s f1 f3
 find . -name "*.c" | xargs grep -v "^$" | wc -l
 ```
 
+#### 2.根据inode删除文件
+```bash 
+# 找到文件的inode号
+ls -il
+# 根据inode号删除文件
+find . -inum <inode> -exec rm -i {} \;
+```
+
 ### 四、系统篇
 #### 1.更改时区
 ```bash
