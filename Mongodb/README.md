@@ -1,4 +1,8 @@
 # Mongodb
+
+#### 准备工作
+[安装](./Install.md)
+
 #### 连接
 ```bash
 # mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
@@ -87,9 +91,6 @@ mongoimport --host 10.48.25.9 --port 27017 -u tip -p QAxTipMongo99# -c ioc --typ
 ```bash
 pass
 ```
-
-#### 5.
-
 
 
 #### 参考文档：

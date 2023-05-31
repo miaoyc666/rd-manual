@@ -1,6 +1,10 @@
 Postgres
 =
 
+#### 准备工作
+[安装](./Install.md)
+
+
 #### 0.连接
 ```bash
 psql -h <host> -U <username> -p <port> -d <dbname>

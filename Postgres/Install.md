@@ -1,9 +1,8 @@
-安装
+Postgres安装
 =
 
-
-### docker-compose
-#### 配置
+### docker-compose启动
+docker-compose.yaml中的xxx需要替换为真实密码
 ```yaml
 version: '3'
 services:
@@ -11,7 +10,7 @@ services:
     image: postgres:10.6
     restart: always
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: xxx
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
