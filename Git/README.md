@@ -1,12 +1,12 @@
 # GIT
 
-### ✅Basic Commands✅
+### ✅基础命令✅
 ```bash
 # delete local branch
 git branch -d localBranchName
 ```
 
-### ✅Low Frequency Commands✅
+### ✅低频命令✅
 ##### delete branch
 ```bash
 # delete remote branch
@@ -67,6 +67,14 @@ git submodule update
 
 ##### 设置本地分支对应的远程分支的方法
 `git push -u origin {branch name}`
+
+##### 修改远端项目地址
+```bash
+git remote rm origin
+git remote add origin <new project>
+```
+
+
 
 ##### 回滚到指定版本
 ```bash
