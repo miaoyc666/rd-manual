@@ -37,6 +37,17 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 
 ## Mac
 ### Brew
+```bash 
+```
 
+## FreeBSD
+### pkg
+#### 更新包信息
+```bash 
+pkg update -f 
+```
 
-
+#### 安装
+```bash 
+pkg install <pkg-name>
+```
