@@ -42,7 +42,12 @@ service netif restart
 hostname <new hostname>
 ```
 
-#### 2.更改pkg源
+#### 2.同步ntp时间
+```bash
+ntpdate time.nist.gov
+```
+
+#### 3.更改pkg源
 ```bash
 # 参考资料：https://mirrors.ustc.edu.cn/help/freebsd-pkg.html
 mkdir -p /usr/local/etc/pkg/repos
