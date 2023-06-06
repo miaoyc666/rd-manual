@@ -10,6 +10,7 @@ fmt.Printf("%s", debug.Stack())
 ```go
 // map
 var a map[string]string 
+a = make(map[string]string)
 // slice
 var b = make([]string, 0)
 ```
@@ -17,7 +18,7 @@ var b = make([]string, 0)
 #### 初始化赋值变量
 ```go
 // map
-`tmpMap := map[int]string{0 : "a", 1 : "b"}
+tmpMap := map[int]string{0 : "a", 1 : "b"}
 // slice
 slis := []int{1,2,3,4,5,6,7,8}
 // array
