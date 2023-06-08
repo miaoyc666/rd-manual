@@ -13,7 +13,7 @@ docker save -o ./test.tar test:v1.0.0
 gzip test.tar test.tar.gz
 
 # or one cmd
-docker save test:v1.0.0 | gzip > ./test.tar
+docker save test:v1.0.0 | gzip > ./test.tar.gz
 ```
 
 ##### 2.导入镜像
