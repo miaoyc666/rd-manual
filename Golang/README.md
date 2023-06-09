@@ -72,12 +72,16 @@ for i < l {
 }
 ```
 
-#### 字符串切分与拼接
+#### 字符串操作
 ```go
+// 切分
 s := "/home/a/a_2022.09.08.1019.dat"
 a := strings.Split(s, ".")
+// 拼接
 b := a[:len(a)-1]
-c := strings.Join(b, ".") + ".tar.gz"
+c := strings.Join(b, ".") + ".tar.gz
+// 包含
+strings.Contains(fileName, ".tar.gz")
 ```
 
 #### 格式转换
