@@ -32,6 +32,11 @@ db.{$collectionName}.remove({$con})     # con为查询条件，格式是json，�
 ```
 
 #### 3.改
+##### 修改表名
+```bash
+db.getCollection("oldName").renameCollection("newName")
+```
+
 ##### 常规
 ```bash
 db.{$collectionName}.update(
@@ -50,8 +55,6 @@ db.{$collectionName}.update(
 db.{$collectionName}.update({'title': 'MongoDB 教程'}, {$set:{'title':'MongoDB'}})
 ```
 
-
-
 #### 4.查
 ##### 常用查询
 ```bash
@@ -61,7 +64,7 @@ db.{$collectionName}.find().pretty()
 
 ##### 查询索引
 ```bash
-
+db.{$collectionName}.getIndexes()
 ```
 
 ##### 聚合查询
