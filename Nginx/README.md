@@ -81,3 +81,28 @@ location /api/v1/ {
     proxy_pass http://open_api_v1/;
 }
 ```
+
+#### 负载均衡配置
+```config
+# 在http内定义upstream，此处为轮训
+upstream testservice {
+    server 192.168.88.1:2022 weight=1;
+    server 192.168.88.2:2022 weight=1;
+    server 192.168.88.3:2022 weight=1;
+}
+
+# 在server内配置转发
+location ^~ /xxx/yyy {
+    proxy_set_header Host $Host;
+    proxy_pass_request_headers on;
+    proxy_set_header X-Forwarded-Host $Host;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_http_version  1.1;
+    proxy_set_header Connection "";
+    if ($uri ~* '/xxx/') {
+        proxy_pass http://testservice;
+    }
+}
+```
