@@ -84,7 +84,7 @@ location /api/v1/ {
 
 #### 负载均衡配置
 ```config
-# 在http内定义upstream，此处为轮训
+# 在http内定义upstream，此处负载均衡策略为轮询
 upstream testservice {
     server 192.168.88.1:2022 weight=1;
     server 192.168.88.2:2022 weight=1;
