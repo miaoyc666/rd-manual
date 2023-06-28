@@ -1,5 +1,7 @@
 # GIT
 
+### 安装Git v2.x====
+[Upgrade](Install.md)
 ### ✅基础命令✅
 ```bash
 # delete local branch
