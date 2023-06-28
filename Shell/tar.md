@@ -10,7 +10,7 @@ openssl aes-128-cbc -salt -k 123123 -in blog.tar.gz -out blog.tar.gz.aes
 openssl aes-128-cbc -d -in blog.tar.gz.aes -out blog.tar.gz -k 123123
 ```
 
-### gzip解压缩
+### gzip压缩和解压缩
 #### 文件
 ```bash
 gzip {$filename}                        # 删除源文件压缩
