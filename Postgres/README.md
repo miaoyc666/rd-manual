@@ -26,6 +26,10 @@ CREATE INDEX idx_name ON tb_name(field_name);
 ```
 
 ### 2.删
+```sql
+# 删除活动连接，先通过pg_stat_activity表查询活动连接获取pid，再根据pid进行删除
+SELECT pg_terminate_backend(<pid>);
+```
 ### 3.改
 
 ### 4.查
