@@ -17,6 +17,6 @@ Unable to connect to the server: x509: certificate has expired or is not yet val
 
 ###### 2.2 更新证书
 官方操作文档
-`https://kubernetes.io/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/`
+`https://kubernetes.io/zh/docs/tasks/administer-cluster/kubeadm/kubeadm-certs/`  
 更新证书命令
 `kubeadm certs renew all`
