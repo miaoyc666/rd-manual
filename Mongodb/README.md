@@ -95,6 +95,11 @@ mongoimport --host 10.48.25.9 --port 27017 -u tip -p QAxTipMongo99# -c ioc --typ
 pass
 ```
 
+#### 常见问题
+##### 1.not master and slaveOk=false
+```bash
+rs.slaveOk()
+```
 
 #### 参考文档：
 * [官方文档](https://mongoing.com/docs/index.html)
