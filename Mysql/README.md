@@ -12,7 +12,7 @@ create user misp identified by 'misp';
 ```
 #### 1.2 授权
 ```sql
-grant {privilegesCode 授权类型} on zhangsanDb.* to zhangsan@'%' identified by 'zhangsan'; flush privileges;
+grant {privilegesCode 授权类型} on zhangsanDb.* to zhangsan@'%';
 flush privileges;
 ```
 ```
