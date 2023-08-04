@@ -1,5 +1,6 @@
 # Golang
 
+### 基础语法
 #### 打印调用堆栈
 ```go
 import "runtime/debug"
@@ -139,23 +140,8 @@ currentTime := time.Now()
 oldTime := currentTime.AddDate(0, 0, -2)
 ```
 
-#### gotests
-```bash
-# 安装gotests
-go get github.com/cweill/gotests/...
+### Go测试
+[Gotest](gotest.md)
 
-# env
-export PATH=$PATH:$GOPATH/bin
-
-# 生成所有测试用例
-gotests -all {$filename}
-```
-
-#### go test
-```bash
-go test -v {$testfile} {$sourcefile}
-go test -v {$testfile} {$sourcefile} -test.run {$test case name}
-```
-
-#### 交叉编译
+### 交叉编译
 [交叉编译](cross-compilation.md)
