@@ -1,11 +1,13 @@
 # GIT
 
 ### 安装Git v2.x====
-[Upgrade](Install.md)
+[升级git方法](Install.md)
+
 ### ✅基础命令✅
+太基础的就不写了，没必要。
 ```bash
-# delete local branch
-git branch -d localBranchName
+# delete local branch, -d是删除， -D是强制删除
+git branch -D localBranchName
 ```
 
 ### ✅低频命令✅
@@ -76,8 +78,6 @@ git remote rm origin
 git remote add origin <new project>
 ```
 
-
-
 ##### 回滚到指定版本
 ```bash
 git reset --hard {commit_id}
@@ -126,15 +126,15 @@ fi
 ##### 拷贝git项目到新库步骤
 ```bash
 1. git clone --bare git@github.com:miaoyc666/rd-manual.git
-2. 新建新的git库，空白库：git@github.com:miaoyc666/rd-manual_new.git
+2. 新建新的git空白库: git@github.com:miaoyc666/rd-manual_new.git
 3. cd rd-manual.git
 4. git push --mirror git@github.com:miaoyc666/rd-manual_new.git
 ```
 
 ##### 切换git库的两个方法
 ```bash
-1. 重新git clone项目；
-2. 修改.git/config文件，将git@github.com:miaoyc666/rd-manual.git替换为git@github.com:miaoyc666/rd-manual_new.git
+1. 重新git clone项目;
+2. 修改.git/config文件, 将git@github.com:miaoyc666/rd-manual.git替换为git@github.com:miaoyc666/rd-manual_new.git
 ```
 
 ### ❌尽量不要使用的命令❌
