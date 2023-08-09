@@ -39,6 +39,7 @@
 - [ubuntu中文乱码](Efficient/ubuntu-zh_cn.md)
 - [tmux使用](Efficient/tmux.md)
 - [压缩和加解密](Shell/tar.md)
+- [应用程序压缩](Efficient/upx.md)
 
 #### 复杂工具安装
 - [K8s](K8s/Install.md)
