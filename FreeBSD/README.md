@@ -20,7 +20,7 @@ adduser
 #### 查看命令
 ```bash 
 # 查看路由表
-netsta -rn 
+netstat -rn 
 ```
 
 #### 新增默认网关
@@ -50,6 +50,8 @@ ntpdate time.nist.gov
 #### 3.更改pkg源
 ```bash
 # 参考资料：https://mirrors.ustc.edu.cn/help/freebsd-pkg.html
+# 自 FreeBSD 11 以后的版本，包括 quarterly 和滚动更新的 latest 仓库。
+# FreeBSD 9 以前的版本不支持新的 pkg 包管理器（pkgng），请升级到新版
 mkdir -p /usr/local/etc/pkg/repos
 vi /usr/local/etc/pkg/repos/FreeBSD.conf
 # start copy and paste
