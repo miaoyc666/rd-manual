@@ -62,3 +62,10 @@ FreeBSD: {
 pkg update -f
 ```
 
+#### 4.修改环境变量
+```csh 
+# freebsd默认使用csh，修改配置信息需要修改.cshrc
+vi .cshrc
+setenv {$NAME} {$VALUE}
+```
+
