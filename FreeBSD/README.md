@@ -47,9 +47,7 @@ hostname <new hostname>
 ntpdate time.nist.gov
 ```
 
-
-
-#### 4.修改环境变量
+#### 3.修改环境变量
 ```csh 
 # freebsd默认使用csh，修改配置信息需要修改.cshrc
 vi .cshrc
@@ -57,8 +55,7 @@ setenv {$NAME} {$VALUE}
 ```
 
 ### 四、软件安装
-#### 4.1 FreeBSD 11以上版本
-######  更改pkg源
+####  4.1.更改pkg源
 ```bash
 # 参考资料：https://mirrors.ustc.edu.cn/help/freebsd-pkg.html
 # 自 FreeBSD 11 以后的版本，包括 quarterly 和滚动更新的 latest 仓库。
@@ -73,8 +70,7 @@ FreeBSD: {
 pkg update -f
 ```
 
-#### 4.2 FreeBSD 11以下版本
-###### 4.2.1 更新ports
+#### 4.2 更新Ports
 ```bash 
 portsnap fetch update
 portsnap extract
