@@ -54,6 +54,13 @@ vi .cshrc
 setenv {$NAME} {$VALUE}
 ```
 
+#### 4.添加lib搜索路径
+```bash 
+# 临时方案，一次加载一次有效
+ldconfig -m PATH
+# 长期方案，
+```
+
 ### 四、软件安装
 ####  4.1.更改pkg源
 ```bash
@@ -76,3 +83,7 @@ portsnap fetch update
 portsnap extract
 ```
 
+### 五. 踩坑
+#### 1.curl
+FreeBSD9.2不支持pkg，ports也不再支持，想用什么软件需要用源码编译安装。
+- [curl](curl.md)
