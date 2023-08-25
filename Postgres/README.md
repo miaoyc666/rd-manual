@@ -37,6 +37,22 @@ SELECT pg_terminate_backend(<pid>);
 ```sql
 SELECT * FROM pg_indexes where tablename='{tbname}';
 SELECT * FROM pg_statio_all_indexes where relname='{tbname}';
+SELECT
+    i.relname AS index_name,
+    a.attname AS column_name,
+    am.amname AS index_type
+FROM
+    pg_index idx
+JOIN
+    pg_class t ON t.oid = idx.indrelid
+JOIN
+    pg_class i ON i.oid = idx.indexrelid
+JOIN
+    pg_attribute a ON a.attnum = ANY(idx.indkey) AND a.attrelid = t.oid
+JOIN
+    pg_am am ON i.relam = am.oid
+WHERE
+    t.relname = 'your_table_name';
 ```
 ##### 查询数据库活动连接数
 ```sql
