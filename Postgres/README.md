@@ -21,8 +21,14 @@ REATE USER admin WITH PASSWORD 'Admin123!';
 GRANT ALL PRIVILEGES ON DATABASE xxx TO admin;
 # 赋予表权限
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO admin;
+# 新建表
+CREATE TABLE test_table (
+    id serial PRIMARY KEY,
+    name varchar(255),
+    age integer
+);
 # 新增索引
-CREATE INDEX idx_name ON tb_name(field_name);
+CREATE INDEX idx_name ON test_table(field_name);
 ```
 
 ### 2.删
@@ -31,6 +37,10 @@ CREATE INDEX idx_name ON tb_name(field_name);
 SELECT pg_terminate_backend(<pid>);
 ```
 ### 3.改
+#### 重命名
+```sql
+ALTER TABLE test_table RENAME TO new_test_table;
+```
 
 ### 4.查
 ##### 查询指定表的所有索引
@@ -52,7 +62,7 @@ JOIN
 JOIN
     pg_am am ON i.relam = am.oid
 WHERE
-    t.relname = 'your_table_name';
+    t.relname = 'test_table';
 ```
 ##### 查询数据库活动连接数
 ```sql
