@@ -41,4 +41,5 @@ SELECT * FROM pg_statio_all_indexes where relname='{tbname}';
 ##### 查询数据库活动连接数
 ```sql
 SELECT count(*) FROM pg_stat_activity;
+SELECT pid, usename, query FROM pg_stat_activity;
 ```
