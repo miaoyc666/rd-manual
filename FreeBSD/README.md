@@ -87,3 +87,31 @@ portsnap extract
 #### 1.curl
 FreeBSD9.2不支持pkg，ports也不再支持，想用什么软件需要用源码编译安装。
 - [curl](curl.md)
+
+#### 2.curl和openssl
+- FreeBSD9.2内置的openssl版本为0.9.8，不支持较新的tls，坑1；
+- 编译libcurl需要先编译升级openssl，再编译升级libcurl；
+- SSL_load_error_strings函数在高版本api不支持，想要支持需要在编译时指定api版本，坑2；
+- 编译openssl指定的api版本参数莫名不生效，坑3；（改源码解决了）
+
+#### 3.yaml
+暂空
+
+#### 4.安装 Autoconf, Automake & Libtool
+```bash 
+curl -OL http://ftpmirror.gnu.org/autoconf/autoconf-2.69.tar.gz 
+tar -xzf autoconf-2.69.tar.gz 
+cd autoconf-2.69 
+./configure && make && sudo make install   
+
+
+curl -OL http://ftpmirror.gnu.org/automake/automake-1.14.tar.gz 
+tar -xzf automake-1.14.tar.gz 
+cd automake-1.14 
+./configure && make && sudo make install   
+
+curl -OL http://ftpmirror.gnu.org/libtool/libtool-2.4.2.tar.gz 
+tar -xzf libtool-2.4.2.tar.gz 
+cd libtool-2.4.2 
+./configure && make && sudo make install
+```
