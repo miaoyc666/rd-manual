@@ -7,10 +7,9 @@ upx用于应用程序压缩，压缩比大于50%
 #### 安装
 [交付物](https://github.com/upx/upx/releases)
 
-#### 编译
-```bash
-
-```
+#### 一些容易忽视的问题
+- upx不支持freebsd
+- 使用pie安全编译的程序，无法通过upx再次压缩
 
 #### 使用
 ```bash
