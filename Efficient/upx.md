@@ -7,6 +7,11 @@ upx用于应用程序压缩，压缩比大于50%
 #### 安装
 [交付物](https://github.com/upx/upx/releases)
 
+#### 编译
+```bash
+
+```
+
 #### 使用
 ```bash
 upx [options] yourfile
