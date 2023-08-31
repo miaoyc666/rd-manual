@@ -31,6 +31,10 @@ pip download -d ${path} -r requirement.txt
 ```bash
 python -m pyftpdlib -d .
 ```
+##### 编译加
+```bash
+[nuitka](https://github.com/Nuitka/Nuitka)
+```
 
 ##### 批量重命名
 ```python
