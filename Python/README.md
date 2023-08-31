@@ -51,7 +51,8 @@ for i in fileList:
 # py2
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 sudo python get-pip.py
-# py3 
+# py3
+# 依赖：apt install python3-distutils
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py 
 ```
