@@ -17,4 +17,7 @@ redirect-gateway def1
 - [OpenVPN Build](https://www.youtube.com/watch?v=o8vbT6siiDU&ab_channel=%E5%B0%8F%E5%85%AD%E6%95%99%E5%AD%A6)
 
 
-
+### Wireguard
+#### 配置
+```bash
+```

@@ -7,6 +7,7 @@ wget https://github.com/docker/compose/releases/download/v2.18.0/docker-compose-
 chmod +x docker-compose-linux-x86_64
 mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 ```
+`高版本（具体版本没细查）docker无需额外安装docker-compose, 可直接使用内置docker compose命令`
 
 ##### 基础命令说明
 ```bash

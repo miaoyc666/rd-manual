@@ -43,11 +43,11 @@ sudo usermod -aG docker $USER
 第一步，执行`sudo yum-config-manager --add-repo http://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo`  
 若第一步执行后未解决问题，执行步骤二，步骤如下：  
 ```bash
-解决方法：
-1.# vim /etc/yum.conf
-2.sslverify=false
-3.# yum clean all
-4.# yum repolist
+解决方法:
+vim /etc/yum.conf
+# 修改sslverify=false
+yum clean all
+yum repolist
 ```
 
 #### 1.3 Ubuntu
