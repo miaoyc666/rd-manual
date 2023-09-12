@@ -3,6 +3,12 @@
 ### 基础语法
 [基础语法](Base.md)
 
+### 武器库
+[goArsenal)](https://github.com/miaoyc666/goArsenal)
+
+### 常见错误
+[go-mistakes](https://github.com/miaoyc666/go-mistakes)
+
 ### Go测试
 [Gotest](gotest.md)
 
