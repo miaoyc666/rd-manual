@@ -9,3 +9,6 @@ Rust
 
 ### rust编写sdk
 [rust-sdk]()
+
+### 基础命令
+#### 编译rs文件
