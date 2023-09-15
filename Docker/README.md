@@ -45,7 +45,8 @@ gzip test.tar test.tar.gz
 docker save test:v1.0.0 | gzip > ./test.tar.gz
 
 # import 
-docker load  --input ./test.tar.gz
+docker load --input ./test.tar.gz
+docker load < ./test.tar.gz
 ```
 
 #### 2.容器和镜像互转
