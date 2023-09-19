@@ -75,6 +75,9 @@ systemctl restart docker
 # 此时可以看到原本删除不掉的镜像在docker images列表中不存在了
 ```
 
+#### 4.构建多架构镜像
+[构建多架构镜像](../Test/build-multi-arch-docker-image.md)
+
 ### docker-compose
 [docker-compose](./docker-compose.md)
 
