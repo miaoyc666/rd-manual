@@ -13,7 +13,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 ##### 修改主题
 ```bash
-修改~/.zshrc的ZSH_THEME配置，可以修改主题
+修改~/.zshrc的ZSH_THEME配置, 可以修改主题
 
 # 主题推荐
 ZSH_THEME="bira"

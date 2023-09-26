@@ -41,6 +41,7 @@
 - [压缩和加解密](Shell/tar.md)
 - [应用程序压缩](Efficient/upx.md)
 - [构建多架构Docker镜像](Test/build-multi-arch-docker-image.md)
+- [acme.sh生成证书](Efficient/acme.sh.md)
 
 #### 复杂工具安装
 - [K8s](K8s/Install.md)
