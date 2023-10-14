@@ -5,6 +5,7 @@
 #### Index
 - [Ceph](Ceph/Readme.md)
 - [Clickhouse](Clickhouse/README.md)
+- [Consul](Consul/README.md)
 - [Debug](Debug/README.md)
 - [Docker](Docker/README.md)
 - [ES](ES/Install.md)
@@ -22,6 +23,7 @@
 - [Nebula](Nebula/README.md)
 - [Nginx](Nginx/README.md)
 - [Node](Node/README.md)
+- [Nomad](Nomad/README.md)
 - [Postgres](Postgres/README.md)
 - [Python](Python/README.md)
 - [Redis](Redis/README.md)
