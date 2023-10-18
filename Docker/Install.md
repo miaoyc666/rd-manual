@@ -111,6 +111,11 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 
+#### 1.5 Mac
+```bash
+brew install docker --cask
+```
+
 ### 2.修改docker cgroupdriver
 安装完成docker后需修改`/etc/docker/daemon.json`，因为systemd是Kubernetes自带的cgroup管理器, 负责为每个进程分配cgroups。
 ```json

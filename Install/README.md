@@ -38,6 +38,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 ## Mac
 ### Brew
 ```bash 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ## FreeBSD
