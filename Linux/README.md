@@ -76,3 +76,15 @@ clock -w
 修改/etc/hosts
 ```
 
+### 五、ssh操作
+#### 1.更改ssh超时
+```bash
+# debian
+vim /etc/ssh/sshd_config
+# 修改一下内容
+ClientAliveInterval 30
+ClientAliveCountMax 3
+
+systemctl restart sshd
+```
+
