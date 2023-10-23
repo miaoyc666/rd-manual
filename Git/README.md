@@ -98,10 +98,9 @@ git rebase --continue
 
 # 举例如下：修改最后一条提交记录的时间
 1.git rebase -i HEAD~1, 输入完命令后在弹出框内选择commit, 修改commit前的标识为edit
-2.git commit --amend
-3.GIT_COMMITTER_DATE="2021-12-26T23:01:07" git commit --amend --date="2021-12-26T23:01:07"
-4.git rebase --continue
-5.git push --force        # 慎重使用
+2.git commit --amend --date="2021-12-26T23:01:07"
+3.git rebase --continue
+4.git push --force        # 慎重使用
 ```
 
 ##### 修改提交用户名和邮箱
