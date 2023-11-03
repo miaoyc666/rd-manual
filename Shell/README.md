@@ -10,3 +10,7 @@ param1=${1:-default_value}
 
 echo "Parameter 1: $param1"
 ```
+
+#### 关于exit
+exit会退出进程。  
+source引用的脚本内出现exit会退出整个进程；sh调用执行的脚本只会退出子进程。  
