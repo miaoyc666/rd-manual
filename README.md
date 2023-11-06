@@ -42,7 +42,7 @@
 - [tmux使用](Efficient/tmux.md)
 - [压缩和加解密](Linux/tar.md)
 - [应用程序压缩](Efficient/upx.md)
-- [构建多架构Docker镜像](Test/build-multi-arch-docker-image.md)
+- [构建多架构Docker镜像](Efficient/build-multi-arch-docker-image.md)
 - [acme.sh生成证书](Efficient/acme.sh.md)
 
 #### 复杂工具安装

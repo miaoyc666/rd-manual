@@ -49,7 +49,7 @@ systemctl restart docker
 ```
 
 #### 4.构建多架构镜像
-[构建多架构镜像](../Test/build-multi-arch-docker-image.md)
+[构建多架构镜像](../Efficient/build-multi-arch-docker-image.md)
 
 ### docker-compose
 [docker-compose](./docker-compose.md)
