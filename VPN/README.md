@@ -17,7 +17,17 @@ redirect-gateway def1
 - [OpenVPN Build](https://www.youtube.com/watch?v=o8vbT6siiDU&ab_channel=%E5%B0%8F%E5%85%AD%E6%95%99%E5%AD%A6)
 
 
-### Wireguard
+### Wireguard windows
 #### 配置
-```bash
+```editorconfig
+[Interface]
+PrivateKey = xxx
+Address = 192.168.89.1/32
+DNS = 119.29.29.29
+
+[Peer]
+PublicKey = xxx
+AllowedIPs = 0.0.0.0/0
+Endpoint = x.x.x.x:11112
+PersistentKeepalive = 15
 ```
