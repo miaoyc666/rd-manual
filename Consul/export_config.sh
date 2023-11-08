@@ -3,14 +3,14 @@
 if [ "$1" == '-h' ];
 then
     echo Usage: ./export_config.sh [token]
-    echo Example: ./export_config.sh cd76a0f7-5535-40cc-8696-073462accabc
+    echo Example: ./export_config.sh f7bf5763-1692-4fd7-8e51-50d4000a27e3
     exit
 fi
 
 if [ $# -ne 1 ];
 then
     echo Usage: ./export_config.sh [token]
-    echo Example: ./export_config.sh cd76a0f7-5535-40cc-8696-073462accabc
+    echo Example: ./export_config.sh f7bf5763-1692-4fd7-8e51-50d4000a27e3
     exit
 fi
 
@@ -19,7 +19,7 @@ echo '#!/bin/bash
 if [ $# -ne 1 ];
 then
     echo Usage: ./env.sh [token]
-    echo Example: ./env.sh cd76a0f7-5535-40cc-8696-073462accabc
+    echo Example: ./env.sh f7bf5763-1692-4fd7-8e51-50d4000a27e3
     exit
 fi
 
