@@ -3,8 +3,24 @@
 
 
 #### Centos
-##### /etc/sysconfig/network-scripts/ifcfg-*
+##### 主要配置文件
 ```conf
+# /etc/sysconfig/network-scripts/ifcfg-*
+# /etc/sysconfig/network-scripts/route-*
+```
+
+##### 设置默认网关
+```conf
+
+# 示例
+default via 192.168.88.254 dev eth0
+```
+
+##### 设置静态路由
+```conf
+
+# 示例
+10.15.150.0/24 via 192.168.150.253 dev eth1
 ```
 
 #### Ubuntu
