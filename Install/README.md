@@ -42,7 +42,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 ```
 
 ### Docker
-`https://docs.docker.com/desktop/install/mac-install/`
+[Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
 
 ## FreeBSD
 ### pkg
