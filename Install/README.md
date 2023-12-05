@@ -41,6 +41,9 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+### Docker
+`https://docs.docker.com/desktop/install/mac-install/`
+
 ## FreeBSD
 ### pkg
 #### 更新包信息
