@@ -7,6 +7,9 @@ Linux
 ```bash
 useradd <username>
 passwd
+
+# adduser 更好用，可以自动创建用户目录用户组
+adduser <username>
 ```
 
 #### 2.添加sudo免密
