@@ -40,6 +40,11 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 ```bash 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+必装工具
+```bash
+brew install wget
+brew install ccat
+```
 
 ### Docker
 [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
