@@ -14,12 +14,12 @@ adduser <username>
 
 #### 2.添加sudo免密
 ```bash
-编辑配置文件
-# centos 
-/etc/sudoers.d/{$user}
-# ubuntu
-/etc/sudoers
-新增: {$user} ALL=(ALL) NOPASSWD:ALL
+# 两种方法：
+# 1.编辑/etc/sudoers
+# 2.新增/etc/sudoers.d/{$user}文件
+# 适配centos, ubuntu, debian
+
+新增内容: {$user} ALL=(ALL) NOPASSWD:ALL
 举例: miaoyc ALL=(ALL) NOPASSWD:ALL
 ```
 
