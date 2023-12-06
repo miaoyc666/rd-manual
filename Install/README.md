@@ -44,6 +44,7 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 ```bash
 brew install wget
 brew install ccat
+brew install htop
 ```
 
 ### Docker
