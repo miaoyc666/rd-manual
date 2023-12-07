@@ -45,6 +45,8 @@ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys ${key-name}
 brew install wget
 brew install ccat
 brew install htop
+brew install mysql-client
+brew tap ringohub/redis-cli; brew install redis-cli
 ```
 
 ### Docker
