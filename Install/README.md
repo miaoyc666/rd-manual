@@ -46,7 +46,8 @@ brew install wget
 brew install ccat
 brew install htop
 brew install node
-brew install mysql-client
+brew install mysql-client  
+brew install libpq
 brew tap ringohub/redis-cli; brew install redis-cli
 ```
 
