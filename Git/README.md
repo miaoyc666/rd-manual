@@ -11,28 +11,35 @@ git branch -D localBranchName
 ```
 
 ### ✅低频命令✅
+##### checkout所有分支到本地
+```bash
+for branch in `git branch -r | grep -v '\->'`; do
+    git branch --track "${branch#origin/}" "$branch"
+done
+```
+
+##### 推送所有分支和tag到远端
+```bash
+git push --all && git push --tags
+```
+
 ##### delete branch
 ```bash
 # delete remote branch
 git push origin --delete remoteBranchName
 ```
 
-##### proxy
-```bash
-git config --global http.proxy http://127.0.0.1:1080
-git config --global https.proxy http://127.0.0.1:1080
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-```
-
 ##### tag
 ```bash
 # 清除远程已经不存在的分支的跟踪分
 git fetch -p
+
 # create tag
 git tag <tag_name>
+
 # delete tag
 git tag -d <tag_name>
+
 # push tag to remote
 git push --tags
 git push --tag
