@@ -67,8 +67,8 @@ alter table <table_name> rename to <new_table_name>
 
 #### 2.备份与恢复表
 ##### 2.1 表备份成sql文件
-
 ```bash
+# 添加--no-data参数可只导出表结构
 mysqldump -h {host} -u {username} -P {port} -p {password} -t {dbname} --tables {tb1} {tb2} ... > dump.sql # 不指定--tables参数则导出所有表
 ```
 ##### 2.2 sql文件恢复成表
