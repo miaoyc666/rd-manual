@@ -43,7 +43,12 @@ ALTER TABLE test_table RENAME TO new_test_table;
 ```
 
 ### 4.查
-##### 查询指定表的所有索引
+#### 查询建表语句
+```sql
+pg_dump -h host -p port -U username -d database_name -t table_name --schema-only
+```
+
+#### 查询指定表的所有索引
 ```sql
 SELECT * FROM pg_indexes where tablename='{tbname}';
 SELECT * FROM pg_statio_all_indexes where relname='{tbname}';
@@ -64,7 +69,7 @@ JOIN
 WHERE
     t.relname = 'test_table';
 ```
-##### 查询数据库活动连接数
+#### 查询数据库活动连接数
 ```sql
 SELECT count(*) FROM pg_stat_activity;
 SELECT pid, usename, query FROM pg_stat_activity;
