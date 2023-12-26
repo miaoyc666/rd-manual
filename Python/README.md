@@ -32,9 +32,10 @@ pip download -d ${path} -r requirement.txt
 python -m pyftpdlib -d .
 ```
 ##### 编译加密
-`#依赖： apt install python3-dev or yum install python3-devel.x86_64`
-[nuitka](https://github.com/Nuitka/Nuitka)
-
+```
+# 依赖： apt install python3-dev or yum install python3-devel.x86_64`
+nuitka: https://github.com/Nuitka/Nuitka
+```
 
 ##### 批量重命名
 ```python
