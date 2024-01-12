@@ -137,6 +137,14 @@ fi
 4. git push --mirror git@github.com:miaoyc666/rd-manual_new.git
 ```
 
+##### 向已存在的非空仓库A推动仓库B的代码
+```bash
+git clone https://example.com/repo-B.git
+cd repo-B
+git remote add repo-A https://example.com/repo-A.git
+git push repo-A main --force        # 此处main表示想要推送的仓库B的分支名称，如果仓库A存在main分支，会覆盖提交
+```
+
 ##### 切换git库的两个方法
 ```bash
 1. 重新git clone项目;
