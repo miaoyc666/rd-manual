@@ -1,55 +1,20 @@
 
 # Python
 
-##### 创建虚拟环境
-```bash
-python3 -m venv ${path}
-```
+### 环境配置
+[虚拟环境和包依赖等](env.md)
 
-##### 生成requirements.txt
-```bash
-# 生成当前环境的requirements.txt
-pip freeze > requirements.txt
-# 生成当前项目的requirements.txt
-pip install pipreqs
-pipreqs .
-# poetry包管理器生成requirements.txt
-poetry export -f requirements.txt --output requirements.txt
-```
-
-##### pip依赖查找
-```bash
-# 查找指定包依赖
-pip show ${package_name}
-# 查找指定包在源中有哪些版本
-pip install ${package_name}==
-```
-
-##### 只下载包和依赖
-```bash
-pip download -d ${path} -r requirement.txt
-```
+### 性能分析
+[profiler.md](profiler.md)
 
 ##### 文件服务器便捷搭建
 ```bash
 python -m pyftpdlib -d .
 ```
-##### 编译加密
-```bash
-# 依赖： apt install python3-dev or yum install python3-devel.x86_64`
-nuitka: https://github.com/Nuitka/Nuitka
-```
 
-##### 替换函数/变量的实现（setattr），函数hacker
-```python
-# 1.先引用old对象
-# 2.再定义new函数/变量
-# 3.替换old对象的old函数/变量为new函数/变量
-from xxx import old
-def new():
-    pass
-setattr(old, 'old_func', new)
-```
+##### 编译加密
+`#依赖： apt install python3-dev or yum install python3-devel.x86_64`
+[nuitka](https://github.com/Nuitka/Nuitka)
 
 ##### 批量重命名
 ```python
@@ -77,7 +42,7 @@ sudo python3 get-pip.py
 ```
 
 ##### 计算md5和base64
-```python3
+```python
 def md5(s):
     return hashlib.md5(s.encode('utf-8')).hexdigest()
 
