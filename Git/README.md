@@ -131,10 +131,16 @@ fi
 
 ##### 拷贝git项目到新库步骤
 ```bash
+# 镜像仓库的方式 
 1. git clone --bare git@github.com:miaoyc666/rd-manual.git
-2. 新建新的git空白库: git@github.com:miaoyc666/rd-manual_new.git
+2. 新建git库: git@github.com:miaoyc666/rd-manual_new.git
 3. cd rd-manual.git
 4. git push --mirror git@github.com:miaoyc666/rd-manual_new.git
+
+# 修改远程仓库的方式
+1. 新建git库: git@github.com:miaoyc666/rd-manual_new.git
+2. 在旧仓库新增远程仓库：git remote add home git@github.com:miaoyc666/rd-manual_new.git
+3. git push home 
 ```
 
 ##### 向已存在的非空仓库A推动仓库B的代码
