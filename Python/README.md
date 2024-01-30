@@ -7,6 +7,11 @@
 ### 性能分析
 [profiler.md](profiler.md)
 
+### 单元测试
+```bash
+python -m unittest test_xxx.py TestClass
+```
+
 ##### 文件服务器便捷搭建
 ```bash
 python -m pyftpdlib -d .
