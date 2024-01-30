@@ -4,7 +4,7 @@
 [升级git方法](Install.md)
 
 ### Git子模块指南
-[submodule.md](submodule.md)
+[新增、更新和删除](submodule.md)
 
 ### ✅基础命令✅
 太基础的就不写了，没必要。
