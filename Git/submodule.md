@@ -4,10 +4,14 @@ Git子模块
 ### 添加
 ```bash
 1. git submodule add https://github.com/miaoyc-test.git
-2. git submodule init
-3. git submodule update
-4. git add .
-5. git commit -m "Added submodule"
+2. git add .
+3. git commit -m "Added submodule"
+```
+
+### 更新
+```bash
+1. git submodule init
+2. git submodule update
 ```
 
 ### 删除
