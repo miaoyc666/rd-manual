@@ -10,8 +10,5 @@ set password xxx
 
 spawn ssh -t xxx@jumper.xxx.com
 expect "*password:*" { send "$password\n" }
-expect "(yes/no)" { send "yes\n" ; exp_continue }
-expect "*password:*" { send "$password\n" ; exp_continue }
-expect "*sudo*" { send "$password\n" }
 interact
 ```
