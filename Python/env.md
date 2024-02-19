@@ -26,3 +26,18 @@ pip show ${package_name}
 ```bash
 pip download -d ${path} -r requirement.txt
 ```
+
+##### 获取操作系统环境
+```python
+# 三种方式
+import platform
+import os
+import sys
+
+# 获取操作系统名称
+os_name = platform.system()
+# 获取操作系统的环境变量
+os_env = os.environ
+# 获取操作系统平台
+os_platform = sys.platform
+```
