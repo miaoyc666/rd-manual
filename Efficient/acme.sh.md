@@ -14,5 +14,5 @@ source ~/.bashrc
 export Ali_Key="YourAccessKeyId"
 export Ali_Secret="YourAccessKeySecret"
 # 生成证书
-acme.sh --issue --dns dns_ali -d example.com -d *.example.com
+acme.sh --issue --dns dns_ali -d example.com -d dev.example.com
 ```
