@@ -53,6 +53,11 @@ ls -il
 find . -inum <inode> -exec rm -i {} \;
 ```
 
+#### 3.获取目录内除最新修改外的所有文件
+```bash
+ls -t | tail -n +2 | xargs echo
+```
+
 ### 四、系统篇
 #### 1.更改时区
 ```bash
