@@ -15,7 +15,7 @@ go list -m module/submodule@<commit-hash>
 [基础语法](Base.md)
 
 ### 武器库
-[goArsenal)](https://github.com/miaoyc666/goArsenal)
+[goArsenal](https://github.com/miaoyc666/goArsenal)
 
 ### 常见错误
 [go-mistakes](https://github.com/miaoyc666/go-mistakes)
