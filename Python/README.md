@@ -7,6 +7,9 @@
 ### 性能分析
 [profiler.md](profiler.md)
 
+### gdb运行进程调试
+[pygdb.md](pygdb.md)
+
 ### 单元测试
 ```bash
 python -m unittest test_xxx.py TestClass
