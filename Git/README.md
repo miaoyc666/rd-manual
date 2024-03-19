@@ -28,8 +28,8 @@ git push --all && git push --tags
 
 ##### delete branch
 ```bash
-# delete remote branch
-git push origin --delete remoteBranchName
+# delete remote branch or tag
+git push origin --delete <remoteBranchName or tagName>
 ```
 
 ##### tag
