@@ -49,33 +49,10 @@ wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py 
 ```
 
-##### 计算md5和base64
-```python
-def md5(s):
-    return hashlib.md5(s.encode('utf-8')).hexdigest()
-
-def base64_encode(s):
-    return base64.b64encode(s.encode('utf-8'))
-
-def base64_decode(s):
-    return base64.b64decode(s).decode('utf-8')
-    
-def md5_base64_byte(string):
-    m = hashlib.md5()
-    m.update(string.encode('utf-8'))
-    # 二进制数据字符串值
-    md5_str = m.digest()
-    b64_str = base64.b64encode(md5_str)
-    return md5_str, b64_str.decode('utf-8')
-
-def md5_base64_hex(string):
-    m = hashlib.md5()
-    m.update(string.encode('utf-8'))
-    # 十六进制数据字符串值
-    md5_str = m.hexdigest()
-    b64_str = base64.b64encode(md5_str.encode('utf-8'))
-    return md5_str, b64_str.decode('utf-8')
-```
+##### hash和编解码
+[base64](https://github.com/miaoyc666/pyArsenal/blob/master/encoding/base64.py)
+[md5](https://github.com/miaoyc666/pyArsenal/blob/master/hash/md5.py)
+[sha256](https://github.com/miaoyc666/pyArsenal/blob/master/hash/sha256.py)
 
 ##### QA
 ###### 1
