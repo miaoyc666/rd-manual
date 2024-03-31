@@ -34,3 +34,9 @@ docker run -itd --restart=always --name miaoyc-xxx miaoyc-xxx:v5.0.0
 ```bash
 docker stats <container_id>
 ```
+
+#### 7.查看存储
+```bash
+docker volume ls
+# 删除rm
+```
