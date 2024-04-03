@@ -96,3 +96,6 @@ ClientAliveCountMax 3
 systemctl restart sshd
 ```
 
+#### 2.sftp
+[sftp](sftp.md)
+
