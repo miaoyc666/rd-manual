@@ -85,6 +85,18 @@ insert into <new table> select * from <old table>;
 2. 只复制表结构到新表（此时会默认使用innodb）
 create table <new table> as select * from <old table> where 1 = 2 
 ```
+
+##### 2.4 查看表容量
+```sql
+SELECT 
+  TABLE_NAME AS 'Table',
+  ROUND((DATA_LENGTH + INDEX_LENGTH) / 1024 / 1024, 2) AS 'Size in MB'
+FROM 
+  information_schema.TABLES 
+WHERE 
+  TABLE_SCHEMA = "xxx";
+```
+
 #### 3.导入/导出csv
 ##### 3.1
 ```bash
