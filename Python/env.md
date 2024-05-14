@@ -22,6 +22,11 @@ pipreqs .
 pip show ${package_name}
 ```
 
+##### 查找所有包版本
+```bash
+pip install package==
+```
+
 ##### 只下载包和依赖
 ```bash
 pip download -d ${path} -r requirement.txt
