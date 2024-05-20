@@ -97,6 +97,7 @@ sysctl --system
 
 ### 3.初始化Kubeadm
 #### 3.1 默认使用containerd初始化
+如果使用kube-vip，则修改以下配置：--apiserver-advertise-address=<vip>， apiserver-advertise-address参数的地址指向预先分配好的ip地址。
 ```bash
 # 默认使用containerd初始化
 kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/containerd/containerd.sock
