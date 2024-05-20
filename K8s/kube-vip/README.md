@@ -25,7 +25,7 @@ kube-vip manifest pod \
 #### 2.部署第一台k8s master节点
 ```bash
 export VIP=192.168.88.200
-sudo kubeadm init --control-plane-endpoint "$VIP:6443" --upload-certs
+sudo kubeadm init --control-plane-endpoint "$VIP:6443" --upload-certs --image-repository registry.aliyuncs.com/google_containers
 ```
 
 
