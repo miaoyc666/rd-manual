@@ -15,6 +15,11 @@ EOF
 modprobe overlay
 modprobe br_netfilter
 ```
+关闭Swap
+```bash 
+sudo swapoff -a
+sudo sed -i '/swap/s/^/#/' /etc/fstab
+```
 
 ### 2.安装containerd
 2.1或2.1章节仅执行一次即可

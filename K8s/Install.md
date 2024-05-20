@@ -8,10 +8,10 @@
 
 
 ### 1.安装CRI
-| 运行时 | Unix 域套接字 |
-| --- | --- |
-| containerd | unix:///var/run/containerd/containerd.sock |
-| CRI-O | unix:///var/run/crio/crio.sock |
+| 运行时                           | Unix 域套接字 |
+|-------------------------------| --- |
+| containerd                    | unix:///var/run/containerd/containerd.sock |
+| CRI-O                         | unix:///var/run/crio/crio.sock |
 | Docker Engine（使用 cri-dockerd） | unix:///var/run/cri-dockerd.sock |
 
 
@@ -95,9 +95,16 @@ EOF
 sysctl --system
 ```
 
+#### 2.5 添加命令补全
+```bash 
+crictl completion > /etc/bash_completion.d/crictl
+kubectl completion bash > /etc/bash_completion.d/kubectl
+kubeadm completion bash > /etc/bash_completion.d/kubeadm
+```
+
 ### 3.初始化Kubeadm
 #### 3.1 默认使用containerd初始化
-如果使用kube-vip，则修改以下配置：--apiserver-advertise-address=<vip>， apiserver-advertise-address参数的地址指向预先分配好的ip地址。
+##### 如果想要配置集群高可用，参考：[使用kube-vip给k8s集群配置vip](kube-vip/README.md)
 ```bash
 # 默认使用containerd初始化
 kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/containerd/containerd.sock
