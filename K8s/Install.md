@@ -65,7 +65,25 @@ apt-mark hold kubelet kubeadm kubectl
 apt-get install -y kubelet=1.25.2-00 kubeadm=1.25.2-00 kubectl=1.25.2-00
 ```
 
-#### 2.3 修改内核运行参数
+#### 2.3 debian安装
+```bash
+sudo apt-get update
+# apt-transport-https 可能是一个虚拟包（dummy package）；如果是的话，你可以跳过安装这个包
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+
+# 如果 `/etc/apt/keyrings` 目录不存在，则应在 curl 命令之前创建它，请阅读下面的注释。
+# sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+# 此操作会覆盖 /etc/apt/sources.list.d/kubernetes.list 中现存的所有配置。
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+
+#### 2.4 修改内核运行参数
 ```bash 
 cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
 net.bridge.bridge-nf-call-iptables  = 1
