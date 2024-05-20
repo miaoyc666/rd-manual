@@ -49,7 +49,10 @@ echo \
 sudo apt-get update
 sudo apt-get install -y containerd.io
 ```
-验证是否安装成功： systemctl status containerd
+验证是否安装成功： 
+* systemctl status containerd
+* containerd --version
+* sudo ctr images pull docker.io/library/hello-world:latest; sudo ctr run --rm docker.io/library/hello-world:latest hello-world
 
 #### 2.2 下载安装containerd
 ```bash
