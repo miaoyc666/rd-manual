@@ -8,10 +8,12 @@
 
 
 ### 1.安装CRI
-运行时	Unix   域套接字  
-containerd	unix:///var/run/containerd/containerd.sock  
-CRI-O	unix:///var/run/crio/crio.sock  
-Docker Engine（使用 cri-dockerd） unix:///var/run/cri-dockerd.sock
+| 运行时 | Unix 域套接字 |
+| --- | --- |
+| containerd | unix:///var/run/containerd/containerd.sock |
+| CRI-O | unix:///var/run/crio/crio.sock |
+| Docker Engine（使用 cri-dockerd） | unix:///var/run/cri-dockerd.sock |
+
 
 #### 1.1 首选containerd
 ##### 官方安装文档：[github](https://github.com/containerd/containerd/blob/main/docs/getting-started.md)
