@@ -21,3 +21,14 @@ kube-vip manifest pod \
     --arp \
     --leaderElection | tee /etc/kubernetes/manifests/kube-vip.yaml
 ```
+
+#### 2.部署第一台k8s master节点
+```bash
+export VIP=192.168.88.200
+sudo kubeadm init --control-plane-endpoint "$VIP:6443" --upload-certs
+```
+
+
+#### 常见问题
+1. 报错：`ctr: image "ghcr.io/kube-vip/kube-vip:v0.8.0": not found`
+   解决方案：`ctr image pull ghcr.io/kube-vip/kube-vip:v0.8.0`
