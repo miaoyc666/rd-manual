@@ -2,7 +2,7 @@
 
 ### [官方文档](https://kubernetes.io/zh-cn/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)
 
-###### 截止24年5月，k8s最新版本为v1.29
+###### 截止24年5月，k8s最新版本为v1.30
 ###### k8s版本更新太快啦，这个文档第一版本封版的时候是23年1月份，当时最新的版本是v1.24
 ###### 说明：自 v1.24 起，Dockershim 已从 Kubernetes 项目中移除。故相比于老版本，v1.24以上需要安装容器运行时接口（CRI）。若需要在v1.24版本以上使用docker命令，需要安装docker和cri-docker。
 
