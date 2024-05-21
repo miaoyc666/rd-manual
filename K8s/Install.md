@@ -100,6 +100,7 @@ kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.
 
 #### 3.2 清理节点
 ```bash
+# 此处为使用dockershim，视实际情况调整
 kubeadm reset -f
 rm -rf /etc/cni /etc/kubernetes /var/lib/dockershim /var/lib/etcd /var/lib/kubelet /var/run/kubernetes ~/.kube/*
 iptables -F && iptables -X
