@@ -45,13 +45,13 @@ sudo yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 sudo systemctl enable --now kubelet
 ```
 
-#### 2.2 ubuntu安装
+#### 2.2 ubuntu/debian安装
 ```bash
 ### Debian/Ubuntu
 # 1.更新 apt 包索引并安装使用 Kubernetes apt 仓库所需要的包
 apt update && apt install -y apt-transport-https
 # 2.下载公开签名秘钥
-curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add - 
+curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | gpg --import
 # 3.添加 Kubernetes apt 仓库
 cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
 deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
@@ -61,29 +61,14 @@ apt update
 apt install -y kubelet kubeadm kubectl
 apt-mark hold kubelet kubeadm kubectl
 
-# ps: 安装指定版本k8s: 
-apt-get install -y kubelet=1.25.2-00 kubeadm=1.25.2-00 kubectl=1.25.2-00
+# ps: 
+# 取消锁定版本
+# apt-mark unhold kubelet kubeadm kubectl
+# 安装指定版本k8s: 
+# apt-get install -y kubelet=1.25.2-00 kubeadm=1.25.2-00 kubectl=1.25.2-00
 ```
 
-#### 2.3 debian安装
-```bash
-sudo apt-get update
-# apt-transport-https 可能是一个虚拟包（dummy package）；如果是的话，你可以跳过安装这个包
-sudo apt-get install -y apt-transport-https ca-certificates curl gpg
-
-# 如果 `/etc/apt/keyrings` 目录不存在，则应在 curl 命令之前创建它，请阅读下面的注释。
-# sudo mkdir -p -m 755 /etc/apt/keyrings
-curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.30/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
-
-# 此操作会覆盖 /etc/apt/sources.list.d/kubernetes.list 中现存的所有配置。
-echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.30/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
-
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
-sudo apt-mark hold kubelet kubeadm kubectl
-```
-
-#### 2.4 修改内核运行参数
+#### 2.3 修改内核运行参数
 ```bash 
 cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
 net.bridge.bridge-nf-call-iptables  = 1
@@ -107,10 +92,10 @@ kubeadm completion bash > /etc/bash_completion.d/kubeadm
 ##### 如果想要配置集群高可用，参考：[使用kube-vip给k8s集群配置vip](kube-vip/README.md)
 ```bash
 # 默认使用containerd初始化
-kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/containerd/containerd.sock
+kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket unix:///var/run/containerd/containerd.sock
 
 # 使用cri-docker初始化
-kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket /var/run/cri-dockerd.sock
+kubeadm init --kubernetes-version=v1.25.2 --apiserver-advertise-address=192.168.88.110 --image-repository registry.aliyuncs.com/google_containers --pod-network-cidr=10.244.0.0/16 --cri-socket unix:///var/run/cri-dockerd.sock
 ```
 
 #### 3.2 清理节点
