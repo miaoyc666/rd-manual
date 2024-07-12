@@ -1,5 +1,6 @@
 ### aes加解密
 #### aes加密命令：
+Aes加密支持多种密钥长度的加密，包括128位、192位和256位，具体使用哪一种取决于密钥长度。
 ```bash
 # -salt 是随机数加盐，-k表示加密密钥
 openssl aes-128-cbc -salt -k 123123 -in blog.tar.gz -out blog.tar.gz.aes
