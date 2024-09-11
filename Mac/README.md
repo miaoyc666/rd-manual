@@ -6,7 +6,7 @@ Mac安全技巧
 
 
 ### 描述文件
-[手动更新和移除配置描述文件](https://support.apple.com/zh-cn/guide/profile-manager/pmdbd71ebc9/mac)
+[手动更新和移除配置描述文件](https://support.apple.com/zh-cn/guide/profile-manager/pmdbd71ebc9/mac)  
 ![img.png](img.png)
 
 ### 系统扩展（System Extensions）
