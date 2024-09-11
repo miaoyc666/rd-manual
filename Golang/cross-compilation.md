@@ -25,7 +25,7 @@ go tool dist list
 
 ##### 示例
 ```bash 
-# go verison: 1.20.5
+# go verison: 1.21.9
 aix/ppc64
 android/386
 android/amd64
@@ -64,11 +64,11 @@ openbsd/386
 openbsd/amd64
 openbsd/arm
 openbsd/arm64
-openbsd/mips64
 plan9/386
 plan9/amd64
 plan9/arm
 solaris/amd64
+wasip1/wasm
 windows/386
 windows/amd64
 windows/arm
