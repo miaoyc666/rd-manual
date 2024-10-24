@@ -50,6 +50,11 @@ brew install mysql-client
 brew install libpq
 brew tap ringohub/redis-cli; brew install redis-cli
 ```
+安装历史版本
+```bash
+brew search {$name}
+brew install {$name}@{$version}
+```
 
 ### Docker
 [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
