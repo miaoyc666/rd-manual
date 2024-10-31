@@ -61,12 +61,16 @@ ls -t | tail -n +2 | xargs echo
 ### 四、系统篇
 #### 1.更改时区
 ```bash
+# 查看时区
+timedatectl
+# 修改时区为上海
 sudo timedatectl set-timezone Asia/Shanghai
 ```
 
 #### 2.同步ntp时间
 ```bash
-ntpdate ntp1.aliyun.com
+# ntp服务器可换为其他
+ntpdate time.windows.com
 ```
 
 #### 3.修改日期时间
