@@ -25,3 +25,11 @@ openssl req -new -key dxx.xx.com.key -out dev.intel.sankuai.com.csr
 openssl x509 -req -days 365 -in xx.xx.com.csr -signkey xx.xx.com.key -out xx.xx.com.crt
 ```
 
+### Mac Let's Encrypt生成证书
+```bash
+brew install certbot
+
+sudo certbot certonly -d "xxx.com" --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+
+# https://blog.csdn.net/maxi1234/article/details/141459718
+```
