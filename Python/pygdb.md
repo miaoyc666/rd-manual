@@ -12,6 +12,8 @@ gdb -p <pid>
 # libpython.py 源码
 # 关键点，要根据python版本选择指定分支的libpython
 https://github.com/python/cpython/blob/main/Tools/gdb/libpython.py
+# python3.10
+https://github.com/python/cpython/blob/3.10/Tools/gdb/libpython.py
 ```
 
 #### 使用步骤

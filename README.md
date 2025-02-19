@@ -44,10 +44,9 @@
 - [压缩和加解密](Linux/tar.md)
 - [应用程序压缩](Efficient/upx.md)
 - [构建多架构Docker镜像](Efficient/build-multi-arch-docker-image.md)
-- [acme.sh生成证书](Efficient/acme.sh.md)
+- [证书生成](Efficient/cert.md)
 - [一键登录跳板机](Efficient/expect.md)
 
 #### 复杂工具安装
 - [K8s](K8s/Install.md)
 - [Centos磁盘操作](Efficient/centos-disk.md)
-

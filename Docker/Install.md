@@ -81,9 +81,12 @@ sudo usermod -aG docker $USER
 ```
 
 #### 1.4 Debian
+
 ```bash
+# 安装前确保已正确更换apt国内源，例如清华源:https://mirrors.tuna.tsinghua.edu.cn/help/debian/
+
 # 移除旧版包
-sudo apt-get remove -y docker docker-engine docker.io containerd runc
+sudo apt-get remove -y docker docker-engine docker.io docker-doc docker-compose podman-docker containerd runc
 
 # 安装依赖
 sudo apt-get update
@@ -94,7 +97,7 @@ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 
 # 配置源
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -cs) stable"
 
 # 更新源
 sudo apt-get update
