@@ -53,31 +53,31 @@ yum repolist
 #### 1.3 Ubuntu
 ```bash
 # 移除旧版包
-sudo apt remove -y docker docker.io containerd runc
+apt remove -y docker docker.io containerd runc
 
 # 安装依赖
-sudo apt install -y ca-certificates curl gnupg lsb-release 
-sudo apt install -y software-properties-common
+apt install -y ca-certificates curl gnupg lsb-release 
+apt install -y software-properties-common
 
 # 添加清华源密钥
-curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add
+curl -fsSL https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu/gpg | apt-key add
 
 # 配置源
-sudo add-apt-repository -y "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+add-apt-repository -y "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 
 # 更新源
-sudo apt -y update
+apt -y update
 
 # 安装docker-ce
-sudo apt install -y docker-ce
+apt install -y docker-ce
 
 # 启动
-sudo systemctl enable docker
-sudo systemctl start docker
+systemctl enable docker
+systemctl start docker
 
 # 用户配置
-sudo groupadd docker
-sudo usermod -aG docker $USER
+groupadd docker
+usermod -aG docker $USER
 ```
 
 #### 1.4 Debian
