@@ -21,9 +21,15 @@ gzip -d {$filename}                     # 解压缩
 
 #### 文件夹
 ```bash
-tar -zcf miaoyc.tar.gz miaoyc               # 压缩
-tar -zcf miaoyc.tar.gz -C /folder/miaoyc .  # 不带目录压缩
-tar -zxf miaoyc.tar.gz -C miaoyc            # 解压缩指定的目录要保证已存在，例中miaoyc目录要存在
+# 参数说明：
+# c：创建一个新的归档文件
+# v：显示详细信息
+# z：使用gzip压缩
+# f：指定归档文件的名称
+# x：提起文件
+tar -zcvf miaoyc.tar.gz miaoyc               # 压缩, 可同时压缩多个文件和目录
+tar -zcvf miaoyc.tar.gz -C /folder/miaoyc .  # 不带目录压缩
+tar -zxvf miaoyc.tar.gz -C miaoyc            # 解压缩指定的目录要保证已存在，例中miaoyc目录要存在
 ```
 
 ### zip解压缩
