@@ -46,6 +46,9 @@ git tag -d <tag_name>
 # push tag to remote
 git push --tags
 git push --tag
+
+# delete
+git push --delete origin <tagname>
 ```
 
 ##### color ui output
