@@ -12,6 +12,9 @@
 -- 列出所有图空间
 SHOW SPACES;
 
+-- 产看所有标签（表）
+SHOW TAGS;
+
 -- 查看所有边类型
 SHOW EDGES;
 ```
