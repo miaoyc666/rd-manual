@@ -45,6 +45,21 @@ Machine "podman-machine-default" started successfully
 podman info
 ```
 
+#### 4.配置镜像
+```bash
+podman machine ssh podman-machine-default;
+sudo su 
+vi /etc/containers/registries.conf.d/999-podman-machine.conf
+```
+粘贴以下内容
+```bash
+unqualified-search-registries = ["docker.io"]
+
+[[registry]]
+prefix = "docker.io"
+location = "ccr.ccs.tencentyun.com"
+```
+
 ### 二、安装 Podman-compose
 #### 1.通过 Homebrew 安装 Podman-compose
 ```bash
