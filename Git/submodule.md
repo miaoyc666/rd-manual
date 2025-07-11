@@ -3,8 +3,8 @@ Git子模块
 
 ### 添加
 ```bash
-# 添加到当前目录
-1. git submodule add https://github.com/miaoyc-test.git
+# 添加到当前目录，add命令会自动创建目录
+1. git submodule add <子模块仓库URL>
 2. git commit -m "Added submodule"
 # 添加到指定目录
 git submodule add <子模块仓库URL> <指定目录>
