@@ -157,6 +157,27 @@ git remote add repo-A https://example.com/repo-A.git
 git push repo-A main --force        # 此处main表示想要推送的仓库B的分支名称，如果仓库A存在main分支，会覆盖提交
 ```
 
+##### 外部代码迁移到内部仓库
+```bash
+git clone git@github.com:test/test.git
+cd dify
+
+git remote add origin ssh://git@[域名]/test/test.git
+// company为自定义名称,无限制
+// ssh://git@[域名]/test/test.git为提前建好的空项目
+// 执行add后，执行git remote可以看到origin和company两个远端分支
+
+git push company main            // 推送main分支到company远端
+git push company 1.5.1           // 推送标签1.5.1到company远端, 根据实际修改
+
+// code fork sync
+// ssh://git@[域名]/test/test_fork.git
+cd [项目名]        // [项目名]替换为真实的路径
+git remote add dify ssh://git@[域名]/test/test.git
+git fetch dify tag 1.5.1
+git push --tag
+```
+
 ##### 切换git库的两个方法
 ```bash
 1. 重新git clone项目;
@@ -166,4 +187,3 @@ git push repo-A main --force        # 此处main表示想要推送的仓库B的�
 ### ❌尽量不要使用的命令❌
 ##### 强行推送tag到远端
 `git push --force`
-
