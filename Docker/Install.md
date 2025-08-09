@@ -52,6 +52,13 @@ yum repolist
 
 #### 1.3 Ubuntu
 ```bash
+apt update
+apt install docker.io
+systemctl enable docker
+```
+
+
+```bash
 # 移除旧版包
 apt remove -y docker docker.io containerd runc
 
