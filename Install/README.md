@@ -50,10 +50,21 @@ brew install mysql-client
 brew install libpq
 brew tap ringohub/redis-cli; brew install redis-cli
 ```
-安装历史版本
+安装不同版本包（例如python的不同版本）
 ```bash
 brew search {$name}
 brew install {$name}@{$version}
+```
+
+安装指定包的历史版本（brew 默认只能安装最新版本包）
+```bash
+# 举例：安装openjdk@11的11.0.27版本(老版本)，最新版是11.0.28
+# 1.去https://github.com/Homebrew/homebrew-core/tree/main/Formula找到历史版本包，下载rb文件（可通过git history找到）
+wget https://raw.githubusercontent.com/Homebrew/homebrew-core/81e8cf683be640a8da5dc4f3da40e3298d947dbe/Formula/o/openjdk@11.rb
+# 2.因brew不允许直接从本地文件安装，需要创建插件仓库后安装
+brew tap-new miaoyc/oldjdk
+cp openjdk@11.rb /opt/homebrew/Library/Taps/miaoyc/homebrew-oldjdk/Formula
+brew install miaoyc/oldjdk/openjdk@11
 ```
 
 ### Docker
