@@ -1,6 +1,24 @@
 环境配置
 =
 
+### uv
+```bash
+# uv大概可以一统江湖了
+
+# 查看py版本
+uv python list
+
+# 虚拟环境（例子）
+uv venv --python 3.13
+
+# 安装pip
+python -m ensurepip --upgrade
+python -m pip install --upgrade pip
+```
+
+
+
+
 ##### 创建虚拟环境
 ```bash
 python3 -m venv ${path}
