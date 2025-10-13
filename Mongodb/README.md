@@ -88,7 +88,7 @@ db.{$collectionName}.aggregate([
 #### 5.运维
 ##### 5.1 导入
 ```bash
-mongoimport --host 10.48.25.9 --port 27017 -u tip -p password -c collection --type json --file data.json
+mongoimport --host 127.0.0.1 --port 27017 -u tip -p password -c collection --type json --file data.json
 ```
 ##### 5.2 导出
 ```bash
