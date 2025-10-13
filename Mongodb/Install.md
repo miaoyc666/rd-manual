@@ -22,3 +22,17 @@ services:
     mem_limit: 4g
     cpus: 4
 ```
+
+### MongoDB Database Tools安装
+#### 1.有root权限
+```bash
+${mongod_dir}/bin/install_compass
+```
+
+#### 2.无root权限
+```bash
+# 以 MongoDB 7.0 的 database tools 为例, redhat
+wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-rhel70-x86_64-100.9.4.tgz
+tar -zxvf mongodb-database-tools-*.tgz
+# mongodb-database-tools-100.9.4/bin/ 即为目标
+```
