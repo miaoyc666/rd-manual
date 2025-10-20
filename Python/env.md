@@ -6,6 +6,7 @@
 # uv大概可以一统江湖了
 # install
 curl -LsSf https://astral.sh/uv/install.sh | sh
+wget -qO- https://astral.sh/uv/install.sh | sh
 
 # 查看py版本
 uv python list
