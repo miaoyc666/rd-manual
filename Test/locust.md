@@ -12,6 +12,9 @@ locust -V
 ### 2.准备工作
 测试脚本 locust_file.py
 ```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from locust import HttpUser, task, between
 
 class MyUser(HttpUser):
