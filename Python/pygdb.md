@@ -1,5 +1,8 @@
 # gdb调试
 
+### 依赖
+sudo apt-get install libc6-dbg
+
 ### 常规调试
 ```bash
 gdb -p <pid>
