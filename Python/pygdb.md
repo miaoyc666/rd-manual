@@ -14,6 +14,8 @@ gdb -p <pid>
 https://github.com/python/cpython/blob/main/Tools/gdb/libpython.py
 # python3.10
 https://github.com/python/cpython/blob/3.10/Tools/gdb/libpython.py
+# python3.12
+https://github.com/python/cpython/blob/v3.12.3/Tools/gdb/libpython.py
 ```
 
 #### 使用步骤
