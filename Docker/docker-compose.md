@@ -1,7 +1,8 @@
 Docker-compose
 =
 
-##### 安装
+### 安装
+##### 普通安装 
 ```bash
 wget https://github.com/docker/compose/releases/download/v2.18.0/docker-compose-linux-x86_64
 chmod +x docker-compose-linux-x86_64
@@ -9,7 +10,15 @@ mv docker-compose-linux-x86_64 /usr/local/bin/docker-compose
 ```
 `高版本（具体版本没细查）docker无需额外安装docker-compose, 可直接使用内置docker compose命令`
 
-##### 基础命令说明
+##### Docker插件安装
+```bash
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.1.1/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+docker compose version
+```
+
+### 基础命令说明
 ```bash
 # 启动容器
 docker-compose -f xxx.yaml up       # 前台启动
