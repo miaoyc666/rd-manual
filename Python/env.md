@@ -19,9 +19,6 @@ python -m ensurepip --upgrade
 python -m pip install --upgrade pip
 ```
 
-
-
-
 ##### 创建虚拟环境
 ```bash
 python3 -m venv ${path}
@@ -51,6 +48,11 @@ pip install package==
 ##### 只下载包和依赖
 ```bash
 pip download -d ${path} -r requirement.txt
+```
+
+##### 下载包及所有依赖（仅wheel文件）
+```
+pip download ${xxx} --only-binary=:all: -d ./
 ```
 
 ##### 获取操作系统环境
