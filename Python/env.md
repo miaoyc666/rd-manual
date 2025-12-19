@@ -43,6 +43,7 @@ pip show ${package_name}
 ##### 查找所有包版本
 ```bash
 pip install package==
+pip index versions ${package_name}
 ```
 
 ##### 只下载包和依赖
