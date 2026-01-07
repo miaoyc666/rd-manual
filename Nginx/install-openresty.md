@@ -46,3 +46,26 @@ Options:
   -c filename   : set configuration file (default: conf/nginx.conf)
   -g directives : set global directives out of configuration file
 ```
+
+##### openresty.service
+```text
+[Unit]
+Description=OpenResty Web Application Server
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/openresty/bin/openresty
+ExecReload=/usr/local/openresty/bin/openresty -s reload
+ExecStop=/usr/local/openresty/bin/openresty -s quit
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```bash
+cp openresty.service /etc/systemd/system/openresty.service
+systemctl enable openresty
+systemctl start openresty
+```
