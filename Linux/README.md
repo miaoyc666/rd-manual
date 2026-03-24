@@ -82,10 +82,8 @@ clock -w
 ```
 
 #### 4.更改hostname
-```bash
-# 根据操作系统不同，分别修改以下文件
-修改/etc/hostname
-修改/etc/hosts
+```bash 
+hostnamectl set-hostname {hostname$}
 ```
 
 ### 五、ssh操作
