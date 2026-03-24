@@ -83,7 +83,7 @@ clock -w
 
 #### 4.更改hostname
 ```bash 
-hostnamectl set-hostname {hostname$}
+hostnamectl set-hostname {$hostname}
 ```
 
 ### 五、ssh操作
