@@ -2,6 +2,17 @@ Sec
 =
 
 ### 安全相关
+
+#### ssh登录相关
+```bash
+# 查看登录ssh登录成功
+journalctl -u sshd -r | grep "session opened for user"
+
+# 查看登录ssh登录失败（主要是扫描器或攻击方）
+journalctl -u sshd -r | grep "Failed password for invalid user"
+journalctl -u sshd -r | grep "Failed password for root"
+```
+
 #### 清除登录记录
 
 | 命令      | 日志文件路径           | 功能             |
