@@ -6,6 +6,7 @@ Sec
 #### ssh登录相关
 ```bash
 # 查看登录ssh登录成功
+# sshd 或 ssh，取决于操作系统
 journalctl -u sshd -r | grep "session opened for user"
 
 # 查看登录ssh登录失败（主要是扫描器或攻击方）
