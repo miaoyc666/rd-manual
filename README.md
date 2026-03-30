@@ -35,6 +35,9 @@
 - [Traefik](Traefik/README.md)
 - [VPN](VPN/README.md)
 
+#### 主机安全相关的一些操作
+- [Linux登录记录](Linux/sec.md)
+
 #### 提升开发效率的技巧和工具
 - [安装软件](Install/README.md)
 - [SSH免密](Efficient/ssh.md)
