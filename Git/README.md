@@ -40,6 +40,10 @@ git tag
 # 查看远端所有tag
 git ls-remote --tags origin
 
+# 先拉取远程 tag 再查看
+git fetch --tags
+git tag -l
+
 # 清除远程已经不存在的分支的跟踪分
 git fetch -p
 
