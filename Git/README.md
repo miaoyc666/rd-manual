@@ -34,6 +34,12 @@ git push origin --delete <remoteBranchName or tagName>
 
 ##### tag
 ```bash
+# 查看tag
+git tag
+
+# 查看远端所有tag
+git ls-remote --tags origin
+
 # 清除远程已经不存在的分支的跟踪分
 git fetch -p
 
