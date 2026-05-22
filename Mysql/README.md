@@ -56,6 +56,30 @@ alter table <table_name> modify id int auto_increment;
 alter table <table_name> AUTO_INCREMENT=10000;
 ```
 #### 2.4 查
+##### 2.4.1 查询db内所有表结构
+```sql
+-- 查看指定数据库中所有表
+SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA = "{dbname}";
+
+-- 查看指定表的完整结构（包括列、类型、约束等）
+SHOW CREATE TABLE {table_name};
+
+-- 查看表的详细列信息
+DESC {table_name};
+或
+DESCRIBE {table_name};
+
+-- 查看所有表的字段详情
+SELECT 
+  TABLE_NAME, 
+  COLUMN_NAME, 
+  COLUMN_TYPE, 
+  IS_NULLABLE, 
+  COLUMN_KEY, 
+  EXTRA 
+FROM information_schema.COLUMNS 
+WHERE TABLE_SCHEMA = "{dbname}";
+```
 
 
 ### 🔶不常用命令🔶
@@ -116,5 +140,4 @@ mysql -h 127.0.0.1 -u root -p XXXX -P 3306 -e "select * from table"  > /tmp/test
 ### 参考文档
 * [官方文档](https://mongoing.com/docs/index.html)
 * [菜鸟教程](https://www.runoob.com/mongodb/mongodb-tutorial.html)
-
 
